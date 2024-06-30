@@ -9,11 +9,11 @@ export const StartContainer = styled.div`
 
 export const Menu = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50% ;
-  transform:translate(-50% , -50%);
+  top: 23%;
+  left: 9.7% ;
+  //transform:translate(-50% , -50%);
   width: 81%;
-  height: 60%;
+  height: 54%;
   display: flex;
   justify-content: space-between;
 `;
@@ -56,7 +56,7 @@ export const SubText = styled.span`
   font-size: 16px;
   color: #626c7f;
   display: inline-block;
-  margin-top: 12%;
+  margin-top: 8%;
   line-height: 150%;
 `;
 

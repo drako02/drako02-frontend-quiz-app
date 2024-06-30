@@ -7,12 +7,12 @@ import styled from "styled-components";
 
 
 const ModeContainer = styled.div`
-    position: absolute;
+    //position: absolute;
     display: flex;
-    width: 9%;
-    height: 4%;
-    left: 81%;
-    top: 10%;
+    width: 12.5%;
+    height: 63%;
+    //left: 81%;
+    //top: 10%;
     border-style: none;
     flex-direction: row;    
 `;
@@ -71,9 +71,9 @@ const RoundSlider = styled.span`
     }
 
     ${SwitchInput}:checked + &:before{
-        -webkit-transform: translateX(92%);
-        -ms-transform: translateX(92%);
-        transform: translateX(92%);
+        -webkit-transform: translateX(93%);
+        -ms-transform: translateX(93%);
+        transform: translateX(93%);
     }
 `;
 
