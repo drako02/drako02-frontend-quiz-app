@@ -72,6 +72,7 @@ export const OptionButton = styled.button`
   background-color: #ffffff;
   font-family: "Rubik Medium", serif;
   font-size: 28px;
+   text-decoration: none;
   color: #4d5869;
   text-align: left;
   flex: 1;

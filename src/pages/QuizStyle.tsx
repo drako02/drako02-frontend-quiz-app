@@ -134,10 +134,10 @@ export const OptionButton = styled.button<OptionButtonProps>`
   &:hover{
       cursor: pointer;
   }
-    &:active{
-        border:2.5px solid #a729f5 ;
-      
-  }
+    &:active {
+        border: ${({ is_Correct }) => (is_Correct === null ? "2.5px solid #a729f5" : "")};
+    }
+    
   
   img {
   ${({ selected_Option, _option, is_Correct }) => {
@@ -150,6 +150,9 @@ export const OptionButton = styled.button<OptionButtonProps>`
               "height: 43%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;";
   }
   }
+      if(selected_Option !== _option){
+          if(is_Correct!== null){return "height: 43%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;"}
+      }
       return " display: none;";
   }};
 
@@ -255,15 +258,115 @@ export const Warning = styled.div`
     
 `;
 
+export const ScoreArea = styled.div`
+    position: absolute;
+    top: 23%;
+    left: 9.7% ;
+    width: 81%;
+    height: 59%;
+    display: flex;
+    justify-content: space-between;
+`;
+
+
+export const ScoreText = styled.div`
+  width: 42%;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", serif;
+  font-size: 64px;
+  line-height: 100%;
+  display: flex;
+  flex-direction: column;
+    color: #313e51;
+    span{
+        font-family: "Rubik Medium", serif;
+        font-size: 64px;
+    }
+
+`;
+
 export const ScoreContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    width: 49%;
+    gap: 4.5%;
+    justify-content: space-between;
 `;
 
-export const Score = styled.h1`
-    font-size: 2rem;
-    color: #333;
+export const ScoreBox = styled.div`
+    height: 75.7%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24px;
+    
+`;
+
+export const PlayAgain = styled.button`
+    height: 18%;
+    font-family: "Rubik Medium", serif;
+    font-size: 28px;
+    line-height: 100%;
+    color: white;
+    background-color: #a729f5;
+    border-style: none;
+    justify-content: center;
+    border-radius: 24px;
+    
+    &:hover{
+        cursor: pointer;
+        background-color: #d394fa;
+    }
+
+`;
+
+export const Title = styled.div<{bgColor: string}>`
+    
+    height: 14.5%;
+    width: 49%;
+    display: flex;
+    font-size: 28px;
+    font-family: "Rubik Medium", serif;
+    line-height: 100%;
+    color: #4d5869;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    gap: 9.5%;
+    img{
+        height: 100%;
+        width: 22%;
+        background-color: ${(props) => {
+            return `${props.bgColor}`;
+        }};
+        border-radius: 8px;
+
+    }
+`;
+
+export const Score =styled.span`
+    display: block;
+    font-family: "Rubik Medium", serif;
+    font-size: 144px;
+    line-height: 100%;
+    color: #313e51;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+`;
+
+export const SupportText = styled.span`
+    display: block;
+    color: #626c7f;
+    font-family: "Rubik", serif;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4%;
+
 `;

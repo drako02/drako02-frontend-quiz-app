@@ -33,9 +33,9 @@ function Start() {
             </Welcome>
             <OptionsContainer>
                 <OptionButton as={Link} to="./pages/HTMLQuiz"> <ButtonIcon src={iconHTML} bgColor="#fff1e9"/> HTML </OptionButton>
-                <OptionButton> <ButtonIcon src={iconCSS} bgColor="#e0fdef"/> CSS </OptionButton>
-                <OptionButton> <ButtonIcon src={iconJS} bgColor="#ebf0ff"/> Javascript </OptionButton>
-                <OptionButton> <ButtonIcon src={iconAccess} bgColor="#f6e7ff"/> Accessibility </OptionButton>
+                <OptionButton as={Link} to="./pages/CSSQuiz"> <ButtonIcon src={iconCSS} bgColor="#e0fdef"/> CSS </OptionButton>
+                <OptionButton as={Link} to="./pages/JavascriptQuiz"> <ButtonIcon src={iconJS} bgColor="#ebf0ff"/> Javascript </OptionButton>
+                <OptionButton as={Link} to="./pages/AccessibilityQuiz"> <ButtonIcon src={iconAccess} bgColor="#f6e7ff"/> Accessibility </OptionButton>
             </OptionsContainer>
         </Menu>
     );

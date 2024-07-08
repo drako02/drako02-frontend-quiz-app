@@ -17,7 +17,7 @@ const Container = styled.div`
   position: absolute;
 `;
 
-const SubjectContainer = styled.div`
+export const SubjectContainer = styled.div`
     position: absolute;
     display: flex;
     width: 80%;
@@ -29,7 +29,7 @@ const SubjectContainer = styled.div`
     justify-content: space-between;
     align-items: center;
 `;
-const Subject = styled.div`
+export const Subject = styled.div`
     display: flex;
     width: 29%;
     height: 100%;
@@ -37,13 +37,13 @@ const Subject = styled.div`
     align-items: center;
     gap: 9.5%;
 `;
-const SubjectText = styled.span`
+export const SubjectText = styled.span`
     font-family: "Rubik Medium", serif;
     font-size: 28px;
     color: #4d5869;
 `;
 
-const SubjectIcon = styled.img<{bgColor: string}>`
+export const SubjectIcon = styled.img<{bgColor: string}>`
   background-color: ${props => props.bgColor};
   height: 100%;
   width: 16%;
@@ -72,6 +72,24 @@ const Layout = () => {
                     icon: function subIcon()  {return(
                         <SubjectIcon src={content.imgSrc} bgColor={content.color} />
             )}
+                };
+            case "/pages/CSSQuiz":
+                return {title: "CSS", imgSrc:iconCSS, color:"#e0fdef",
+                    icon: function subIcon()  {return(
+                        <SubjectIcon src={content.imgSrc} bgColor={content.color} />
+                    )}
+                };
+            case "/pages/JavascriptQuiz":
+                return {title: "JavaScript", imgSrc:iconJS, color:"#ebf0ff",
+                    icon: function subIcon()  {return(
+                        <SubjectIcon src={content.imgSrc} bgColor={content.color} />
+                    )}
+                };
+            case "/pages/AccessibilityQuiz":
+                return {title: "Accessibility", imgSrc:iconAccess, color:"#f6e7ff",
+                    icon: function subIcon()  {return(
+                        <SubjectIcon src={content.imgSrc} bgColor={content.color} />
+                    )}
                 };
             default:
                 return {title: "",  color: "", icon: function empty()  {return(
