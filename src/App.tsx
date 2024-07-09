@@ -11,9 +11,8 @@ import GlobalStyles from "./GlobalStyles";
 
 function App() {
     return (
-        <>
-        <GlobalStyles/>
         <BrowserRouter>
+            <GlobalStyles/>
             <Routes>
                 <Route path="/" element={<Layout/>}>
                     <Route index element={<Start/>}/>
@@ -24,7 +23,6 @@ function App() {
                 </Route>
             </Routes>
         </BrowserRouter>
-        </>
     );
 }
 
