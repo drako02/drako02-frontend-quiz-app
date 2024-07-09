@@ -110,7 +110,7 @@ export const SubText = styled.span`
     }
 
     @media(max-width: ${breakpoints.mobile}){
-        font-family: "Rubik", serif;
+        font-family: "Rubik Regular", serif;
         font-size: 14px;
         font-style: italic;
         margin-top: 8%;

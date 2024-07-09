@@ -111,7 +111,7 @@ export const QuestionNo = styled.span`
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
         height: 9%;
-        font-family: "Rubik", serif;
+        font-family: "Rubik Regular", serif;
         font-size: 14px;
         font-style: italic;
         margin-bottom: 9%;
@@ -382,7 +382,7 @@ export const Warning = styled.div`
     flex-direction: row;
     height: 6%;
     margin-top: auto;
-    font-family: "Rubik", serif;
+    font-family: "Rubik Regular", serif;
     font-size: 24px;
     line-height: 150%;
     color:#ee5454 ;
@@ -390,7 +390,7 @@ export const Warning = styled.div`
     justify-content: center;
 
     @media(max-width: ${breakpoints.mobile}){
-        font-family: "Rubik", serif;
+        font-family: "Rubik Regular", serif;
         font-size: 18px;
     }
     
@@ -428,7 +428,7 @@ export const ScoreText = styled.div`
   width: 42%;
   margin: 0;
   padding: 0;
-  font-family: "Rubik", serif;
+  font-family: "Rubik Regular", serif;
   font-size: 64px;
   line-height: 100%;
   display: flex;
@@ -580,14 +580,14 @@ export const Score =styled.span`
 export const SupportText = styled.span`
     display: block;
     color: #626c7f;
-    font-family: "Rubik", serif;
+    font-family: "Rubik Regular", serif;
     font-size: 24px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4%;
 
     @media(max-width: ${breakpoints.mobile}){
-        font-family: "Rubik", serif;
+        font-family: "Rubik Regular", serif;
         font-size: 18px;
         margin-bottom: 13%;
 
