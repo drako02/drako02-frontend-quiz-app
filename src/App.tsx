@@ -6,10 +6,13 @@ import CSSQuiz from "./pages/CSSQuiz";
 import JavaScriptQuiz from "./pages/JavascriptQuiz";
 import AccessibilityQuiz from "./pages/AccessibilityQuiz";
 import Start from './StartPage';
+import GlobalStyles from "./GlobalStyles";
 
 
 function App() {
     return (
+        <>
+        <GlobalStyles/>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Layout/>}>
@@ -21,6 +24,7 @@ function App() {
                 </Route>
             </Routes>
         </BrowserRouter>
+        </>
     );
 }
 
