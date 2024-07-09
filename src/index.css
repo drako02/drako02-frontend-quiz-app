@@ -2,7 +2,7 @@ body {
   position: relative;
   margin: 0;
   box-sizing: border-box;
-  height: 110vh;
+  height: 100vh;
   background-size: cover;
   background-image: url("assets/images/pattern-background-desktop-light-top-left.svg"), url("assets/images/pattern-background-desktop-light_bottom-right.svg") ;
   background-repeat: no-repeat;

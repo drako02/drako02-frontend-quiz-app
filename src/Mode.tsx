@@ -4,6 +4,8 @@ import dark from './assets/images/icon-moon-dark.svg'
 
 import styled from "styled-components";
 
+const breakpoints = {tablet: '768px', mobile: '480px'};
+
 
 
 const ModeContainer = styled.div`
@@ -14,7 +16,16 @@ const ModeContainer = styled.div`
     //left: 81%;
     //top: 10%;
     border-style: none;
-    flex-direction: row;    
+    flex-direction: row;
+
+    @media(max-width: ${breakpoints.tablet}){
+        width: 24%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        width: 21%;
+        height: 28%;
+        margin-right: 6.4%;
+    }
 `;
 
 const Light = styled.img`

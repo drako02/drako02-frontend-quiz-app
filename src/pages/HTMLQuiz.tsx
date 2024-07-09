@@ -8,9 +8,8 @@ import incorrect from '../assets/images/icon-incorrect.svg';
 import iconHTML from '../assets/images/icon-html.svg';
 import {
     QuizContainer,
+    QuestionArea,
     QuestionContainer,
-    QuestionParagraph,
-    QuestionNoParagraph,
     QuestionNo,
     Question,
     Options,
@@ -104,31 +103,29 @@ function HTMLQuiz() {
         return (
             <QuizContainer>
                 <>
-                    <QuestionContainer>
-                        <QuestionNoParagraph>
+                    <QuestionArea>
+                        <QuestionContainer>
                             <QuestionNo> Question {currentQuestionIndex + 1} of 10 </QuestionNo>
-                        </QuestionNoParagraph>
-                        <QuestionParagraph>
                             <Question>{currentQuestion.question}</Question>
-                        </QuestionParagraph>
+                        </QuestionContainer>
                         <Tracker>
                             <TrackerLevel level={currentQuestionIndex + 1}></TrackerLevel>
                         </Tracker>
-                    </QuestionContainer>
+                    </QuestionArea>
                     <OptionsContainer>
                         <Options>
                             {currentQuestion.options.map((option, index) => (
                                 <OptionButton
                                     key={index}
                                     onClick={() => handleOptionClick(option)}
-                                    selected_Option={selectedOption}
+                                    selected_option={selectedOption}
                                     _option={option}
-                                    is_Correct={isCorrect}
+                                    is_correct={isCorrect}
                                 >
                                     <OptionLetter
-                                        selected_Option={selectedOption}
+                                        selected_option={selectedOption}
                                         _option={option}
-                                        is_Correct={isCorrect}
+                                        is_correct={isCorrect}
                                     > {String.fromCharCode(65 + index)} </OptionLetter>
                                     {option}
                                     {isCorrect !== null && (

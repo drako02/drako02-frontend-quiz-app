@@ -12,11 +12,13 @@ import styled from "styled-components";
 //   display: flex;
 //   justify-content: space-between;
 // `;
+const breakpoints = {tablet: '768px', mobile: '480px'};
+
 
 interface OptionButtonProps {
-    selected_Option: string | null;
+    selected_option: string | null;
     _option: string;
-    is_Correct: boolean | null;
+    is_correct: boolean | null;
 }
 
 export const QuizContainer = styled.div`
@@ -28,53 +30,132 @@ export const QuizContainer = styled.div`
     height: 72%;
     display: flex;
     justify-content: space-between;
+
+    @media(max-width: ${breakpoints.tablet}){
+        width: 83%;
+        height: 86%;
+        top: 14%;
+        left: 8%;
+        flex-direction: column;
+    }
+
+    @media(max-width: ${breakpoints.mobile}){
+        width: 100%;
+        height: 91%;
+        top: 9%;
+        left: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
 `;
 
-export const QuestionContainer = styled.div`
+export const QuestionArea = styled.div`
   width: 42%;
   height: 69%;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
+    //justify-content: ;
+    @media(max-width: ${breakpoints.tablet}){
+        width: 100%;
+        height: 30%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        width: 87%;
+        height: 29%;
+        justify-content: space-between;
+    }
 `;
 
-export const QuestionParagraph = styled.p`
-  margin: 0;
-  padding: 0;
-`;
-
-export const QuestionNoParagraph     = styled.p`
-    margin: 0;
+export const QuestionContainer = styled.div`
+    height: fit-content;
+    //margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    //margin-bottom: auto;
+
+    @media(max-width: ${breakpoints.tablet}){
+        width: 100%;
+        height: 70%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        width: 100%;
+        height: 76%;
+    }
 `;
+
+// export const QuestionParagraph = styled.p`
+//   margin: 0;
+//   padding: 0;
+// `;
+//
+// export const QuestionNoParagraph     = styled.p`
+//     margin: 0;
+//     padding: 0;
+// `;
 
 export const QuestionNo = styled.span`
+  width: 100%;
   font-family: 'Rubik Regular', serif;
   font-style: italic;
   font-size: 16px;
   color: #626c7f;
-  display: inline-block;
+  display: block;
   margin-top: 1%; 
-  margin-bottom: 6%;
+  margin-bottom: 4%;
   line-height: 150%;
+
+    @media(max-width: ${breakpoints.mobile}){
+        width: 100%;
+        height: 9%;
+        font-family: "Rubik", serif;
+        font-size: 14px;
+        font-style: italic;
+        margin-bottom: 9%;
+    }
 `;
 
 export const Question = styled.span`
+  width: 100%;
   margin: 0;
   padding: 0;
+    display: block;
   font-family: "Rubik Medium", serif;
   font-size: 36px;
+    line-height: 120%;
   color: #313E51;
+    
+    @media(max-width: ${breakpoints.tablet}){
+        line-height: 100%;
+
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        font-family: "Rubik Medium", serif;
+        font-size: 20px;
+        line-height: 120%;
+    }
 
 `;
 
 export const Tracker = styled.div`
     height: 3.5%;
     width: 100%;
-    margin-top: auto;
+    //margin-top: auto;
     background-color: white;
     border-radius: 100px;
+    margin-top: auto;
+
+    @media(max-width: ${breakpoints.tablet}){
+        height: 6.6%;
+        
+    })
+@media(max-width: ${breakpoints.mobile}){
+    width: 100%;
+    height: 9.5%;
+}
 `;
 
 export const TrackerLevel = styled.div<{level: number}>`
@@ -94,6 +175,16 @@ export const OptionsContainer = styled.div`
     flex-direction: column;
     width: 49%;
     gap: 4.5%;
+
+    @media(max-width: ${breakpoints.tablet}){
+        width: 100%;
+        height: 63%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        width: 87%;
+        height: 55%;
+        margin-top: 6.8%;
+    }
 `;
 export const Options = styled.div`
   display: flex;
@@ -102,6 +193,16 @@ export const Options = styled.div`
     height: 69%;
   margin: 0;
   gap: 5%;
+
+    @media(max-width: ${breakpoints.tablet}){
+        width: 100%;
+        height: 67%;
+    }
+
+    @media(max-width: ${breakpoints.mobile}){
+        width: 100%;
+        height: 72%;
+    }
 `;
 
 export const OptionButton = styled.button<OptionButtonProps>`
@@ -120,12 +221,12 @@ export const OptionButton = styled.button<OptionButtonProps>`
   display: flex;
   align-items: center;
   //transition: 0.2s ease;  
-    border: ${({ selected_Option, _option, is_Correct }) => {
-        if (selected_Option === _option) {
-            if (is_Correct === null) {
+    border: ${({ selected_option, _option, is_correct }) => {
+        if (selected_option === _option) {
+            if (is_correct === null) {
                 return "2.5px solid #a729f5" ;
             } else {
-                return is_Correct ? "3px solid #26d782" : "3px solid #ee5454;";
+                return is_correct ? "3px solid #26d782" : "3px solid #ee5454;";
             }
         }
         return "";
@@ -135,40 +236,56 @@ export const OptionButton = styled.button<OptionButtonProps>`
       cursor: pointer;
   }
     &:active {
-        border: ${({ is_Correct }) => (is_Correct === null ? "2.5px solid #a729f5" : "")};
+        border: ${({ is_correct }) => (is_correct === null ? "2.5px solid #a729f5" : "")};
     }
     
   
   img {
-  ${({ selected_Option, _option, is_Correct }) => {
-      if (selected_Option === _option) {
-      if (is_Correct === null) {
+  ${({ selected_option, _option, is_correct }) => {
+      if (selected_option === _option) {
+      if (is_correct === null) {
       return "display : none;" ;
   } else {
-      return is_Correct ? "height: 43%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;" 
+      return is_correct ? "height: 48%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;" 
               :
-              "height: 43%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;";
+              "height: 48%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;";
   }
   }
-      if(selected_Option !== _option){
-          if(is_Correct!== null){return "height: 43%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;"}
+      if(selected_option !== _option){
+          if(is_correct!== null){return "height: 48%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;"}
       }
       return " display: none;";
   }};
 
   }
+
+    @media(max-width: ${breakpoints.tablet}){
+        height: 20.4%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        width: 100%;
+        height: 22%;
+        font-family: "Rubik Medium", serif;
+        font-size: 18px;
+        border-radius: 12px;
+        
+        img{
+            width: 9.8%;
+            height: 50%;
+        }
+    }
     
 
 `;
 
 export const OptionLetter = styled.div<OptionButtonProps>`
     display: flex;
-    background-color: ${({ selected_Option, _option, is_Correct }) => {
-        if (selected_Option === _option) {
-            if (is_Correct === null) {
+    background-color: ${({ selected_option, _option, is_correct }) => {
+        if (selected_option === _option) {
+            if (is_correct === null) {
                 return "#a729f5";
             } else {
-                return is_Correct ? "#26d782" : "#ee5454";
+                return is_correct ? "#26d782" : "#ee5454";
             }
         }
         return "#f4f6fa";
@@ -178,12 +295,12 @@ export const OptionLetter = styled.div<OptionButtonProps>`
     border-radius: 8px;
     margin-left: 4%;
     margin-right: 5%;
-    color: ${({ selected_Option, _option, is_Correct }) => {
-        if (selected_Option === _option) {
-            if (is_Correct === null) {
+    color: ${({ selected_option, _option, is_correct }) => {
+        if (selected_option === _option) {
+            if (is_correct === null) {
                 return "white";
             } else {
-                return is_Correct ? "white" : "white";
+                return is_correct ? "white" : "white";
             }
         }
         return "#626c7f";
@@ -193,27 +310,35 @@ export const OptionLetter = styled.div<OptionButtonProps>`
     transition: background-color 0.3s ease;
     
     ${OptionButton}:hover &{
-        background-color: ${({ selected_Option, _option, is_Correct }) => {
-            if (selected_Option === _option) {
-                if (is_Correct === null) {
+        background-color: ${({ selected_option, _option, is_correct }) => {
+            if (selected_option === _option) {
+                if (is_correct === null) {
                     return "#a729f5";
                 } else {
-                    return is_Correct ? "26d782"  : "ee5454";
+                    return is_correct ? "26d782"  : "ee5454";
                 }
             }
             return "#f6e7ff";
         }};
 
-        color: ${({ selected_Option, _option, is_Correct }) => {
-            if (selected_Option === _option) {
-                if (is_Correct === null) {
+        color: ${({ selected_option, _option, is_correct }) => {
+            if (selected_option === _option) {
+                if (is_correct === null) {
                     return "whiite";
                 } else {
-                    return is_Correct ? "white"  : "white";
+                    return is_correct ? "white"  : "white";
                 }
             }
             return "#a729f5";
         }};
+
+        @media(max-width: ${breakpoints.mobile}){
+            border-radius: 6px;
+            width: 12%;
+            height: 63%;
+            font-family: "Rubik Medium", serif;
+            font-size: 18px;
+        }
         
     }
     
@@ -238,6 +363,14 @@ export const SubmitButton = styled.button`
         background-color: #d394fa;
         cursor: pointer;
     }
+
+    @media(max-width: ${breakpoints.mobile}){
+        width: 100%;
+        height: 14%;
+        font-family: "Rubik Medium", serif;
+        font-size: 18px;
+        border-radius: 12px;
+    }
 `;
 
 export const Warning = styled.div`
@@ -255,6 +388,11 @@ export const Warning = styled.div`
     color:#ee5454 ;
     align-items: center;
     justify-content: center;
+
+    @media(max-width: ${breakpoints.mobile}){
+        font-family: "Rubik", serif;
+        font-size: 18px;
+    }
     
 `;
 
@@ -266,6 +404,23 @@ export const ScoreArea = styled.div`
     height: 59%;
     display: flex;
     justify-content: space-between;
+
+    @media(max-width: ${breakpoints.tablet}){
+        height: 74%;
+        width: 83%;
+        top: 14%;
+        left: 8.3%;
+        flex-direction: column;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        width: 100%;
+        height: 91%;
+        top: 9%;
+        left: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
 `;
 
 
@@ -284,6 +439,24 @@ export const ScoreText = styled.div`
         font-size: 64px;
     }
 
+    @media(max-width: ${breakpoints.tablet}){
+        width: 100%;
+        height: 19%;
+        
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        width: 87%;
+        height: 18%;
+        font-family: "Rubik Light", serif;
+        font-size: 40px;
+        margin-top: 4%;
+        
+        span{
+            font-family: "Rubik Medium", serif;
+            font-size: 40px;
+        }
+    }
+
 `;
 
 export const ScoreContainer = styled.div`
@@ -292,6 +465,16 @@ export const ScoreContainer = styled.div`
     width: 49%;
     gap: 4.5%;
     justify-content: space-between;
+
+    @media(max-width: ${breakpoints.tablet}){
+        width: 100%;
+        height: 72%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        width: 87%;
+        height: 64%;
+        margin-top: 3%;
+    }
 `;
 
 export const ScoreBox = styled.div`
@@ -302,7 +485,14 @@ export const ScoreBox = styled.div`
     align-items: center;
     justify-content: space-between;
     border-radius: 24px;
-    
+
+    @media(max-width: ${breakpoints.tablet}){
+        width: 100%;
+        height: 75%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        border-radius: 12px;
+    }
 `;
 
 export const PlayAgain = styled.button`
@@ -321,6 +511,15 @@ export const PlayAgain = styled.button`
         background-color: #d394fa;
     }
 
+    @media(max-width: ${breakpoints.tablet}){
+        width: 100%;
+        height: 18%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        font-family: "Rubik Medium", serif;
+        font-size: 18px;
+        border-radius: 12px;
+    }
 `;
 
 export const Title = styled.div<{bgColor: string}>`
@@ -347,6 +546,18 @@ export const Title = styled.div<{bgColor: string}>`
         border-radius: 8px;
 
     }
+
+    @media(max-width: ${breakpoints.tablet}){
+    height: 14%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        height: 17%;
+        width: 51%;
+        margin-top: 13%;
+        font-family: "Rubik Medium", serif;
+        font-size: 18px;
+
+    }
 `;
 
 export const Score =styled.span`
@@ -358,6 +569,12 @@ export const Score =styled.span`
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
+
+    @media(max-width: ${breakpoints.mobile}){
+        font-family: "Rubik Medium", serif;
+        font-size: 88px;
+        margin-top: 7%;
+    }
 `;
 
 export const SupportText = styled.span`
@@ -368,5 +585,12 @@ export const SupportText = styled.span`
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4%;
+
+    @media(max-width: ${breakpoints.mobile}){
+        font-family: "Rubik", serif;
+        font-size: 18px;
+        margin-bottom: 13%;
+
+    }
 
 `;

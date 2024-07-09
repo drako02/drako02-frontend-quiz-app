@@ -9,8 +9,7 @@ import iconJS from '../assets/images/icon-js.svg';
 import {
     QuizContainer,
     QuestionContainer,
-    QuestionParagraph,
-    QuestionNoParagraph,
+
     QuestionNo,
     Question,
     Options,
@@ -24,7 +23,7 @@ import {
     ScoreContainer,
     ScoreArea,
     ScoreText,
-    ScoreBox, PlayAgain, Title, Score, SupportText
+    ScoreBox, PlayAgain, Title, Score, SupportText, QuestionArea
 } from "./QuizStyle";
 import Mode from "../Mode";
 
@@ -104,31 +103,29 @@ function JavaScriptQuiz() {
     return (
         <QuizContainer>
             <>
-                <QuestionContainer>
-                    <QuestionNoParagraph>
+                <QuestionArea>
+                    <QuestionContainer>
                         <QuestionNo> Question {currentQuestionIndex + 1} of 10 </QuestionNo>
-                    </QuestionNoParagraph>
-                    <QuestionParagraph>
                         <Question>{currentQuestion.question}</Question>
-                    </QuestionParagraph>
+                    </QuestionContainer>
                     <Tracker>
                         <TrackerLevel level={currentQuestionIndex + 1}></TrackerLevel>
                     </Tracker>
-                </QuestionContainer>
+                </QuestionArea>
                 <OptionsContainer>
                     <Options>
                         {currentQuestion.options.map((option, index) => (
                             <OptionButton
                                 key={index}
                                 onClick={() => handleOptionClick(option)}
-                                selected_Option={selectedOption}
+                                selected_option={selectedOption}
                                 _option={option}
-                                is_Correct={isCorrect}
+                                is_correct={isCorrect}
                             >
                                 <OptionLetter
-                                    selected_Option={selectedOption}
+                                    selected_option={selectedOption}
                                     _option={option}
-                                    is_Correct={isCorrect}
+                                    is_correct={isCorrect}
                                 > {String.fromCharCode(65 + index)} </OptionLetter>
                                 {option}
                                 {isCorrect !== null && (

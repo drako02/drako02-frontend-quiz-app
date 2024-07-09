@@ -25,11 +25,9 @@ function Start() {
     return (
         <Menu>
             <Welcome>
-                <WelcomeText>
-                    <MainText> Welcome to the </MainText>
-                    <SupText> Frontend Quiz! </SupText>
-                    <SubText> Pick a subject to get started </SubText>
-                </WelcomeText>
+                <MainText> Welcome to the </MainText>
+                <SupText> Frontend Quiz! </SupText>
+                <SubText> Pick a subject to get started </SubText>
             </Welcome>
             <OptionsContainer>
                 <OptionButton as={Link} to="./pages/HTMLQuiz"> <ButtonIcon src={iconHTML} bgColor="#fff1e9"/> HTML </OptionButton>

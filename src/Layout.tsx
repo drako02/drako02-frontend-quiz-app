@@ -17,6 +17,8 @@ const Container = styled.div`
   position: absolute;
 `;
 
+const breakpoints = {tablet: '768px', mobile: '480px'};
+
 export const SubjectContainer = styled.div`
     position: absolute;
     display: flex;
@@ -28,6 +30,18 @@ export const SubjectContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    @media(max-width: ${breakpoints.tablet}){
+        top: 4%;
+        left: 8.4%;
+        height: 6%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 9%;
+    }
+    
 `;
 export const Subject = styled.div`
     display: flex;
@@ -36,11 +50,24 @@ export const Subject = styled.div`
     flex-direction: row;
     align-items: center;
     gap: 9.5%;
+
+    @media(max-width: ${breakpoints.tablet}){
+        width: 40%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        width: 45%;
+        height: 56%;
+        margin-left: 6.4%;
+    }
 `;
 export const SubjectText = styled.span`
     font-family: "Rubik Medium", serif;
     font-size: 28px;
     color: #4d5869;
+
+    @media(max-width: ${breakpoints.mobile}){
+        font-size: 18px;
+    }
 `;
 
 export const SubjectIcon = styled.img<{bgColor: string}>`
@@ -48,8 +75,14 @@ export const SubjectIcon = styled.img<{bgColor: string}>`
   height: 100%;
   width: 16%;
   border-radius: 8px;
-  //margin-left: 4%;
-  //margin-right: 8%;
+
+    @media(max-width: ${breakpoints.tablet}){
+        width: 21%;
+    }
+    @media(max-width: ${breakpoints.mobile}){
+        width: 24%;
+        height: 100%;
+    }
 `;
 
 
