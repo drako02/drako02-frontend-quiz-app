@@ -102,7 +102,7 @@ export const QuestionNo = styled.span`
   font-family: 'Rubik Regular', serif;
   font-style: italic;
   font-size: 16px;
-  color: #626c7f;
+  color: ${props => props.theme.colors.subFont};
   display: block;
   margin-top: 1%; 
   margin-bottom: 4%;
@@ -126,7 +126,7 @@ export const Question = styled.span`
   font-family: "Rubik Medium", serif;
   font-size: 36px;
     line-height: 120%;
-  color: #313E51;
+  color: ${props => props.theme.colors.font};
     
     @media(max-width: ${breakpoints.tablet}){
         line-height: 100%;
@@ -144,7 +144,7 @@ export const Tracker = styled.div`
     height: 3.5%;
     width: 100%;
     //margin-top: auto;
-    background-color: white;
+    background-color: ${props => props.theme.colors.tracker};
     border-radius: 100px;
     margin-top: auto;
 
@@ -206,10 +206,10 @@ export const Options = styled.div`
 `;
 
 export const OptionButton = styled.button<OptionButtonProps>`
-  background-color: #ffffff;
+  background-color: ${props => props.theme.colors.button};
   font-family: "Rubik Medium", serif;
   font-size: 28px;
-  color: #4d5869;
+  color: ${props => props.theme.colors.font};;
     line-height: 90%; 
   text-align: left;
   flex: 1;
@@ -433,7 +433,7 @@ export const ScoreText = styled.div`
   line-height: 100%;
   display: flex;
   flex-direction: column;
-    color: #313e51;
+    color: ${props => props.theme.colors.font};
     span{
         font-family: "Rubik Medium", serif;
         font-size: 64px;
@@ -479,7 +479,7 @@ export const ScoreContainer = styled.div`
 
 export const ScoreBox = styled.div`
     height: 75.7%;
-    background-color: white;
+    background-color: ${props => props.theme.colors.button};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -530,7 +530,7 @@ export const Title = styled.div<{bgColor: string}>`
     font-size: 28px;
     font-family: "Rubik Medium", serif;
     line-height: 100%;
-    color: #4d5869;
+    color: ${props => props.theme.colors.font};
     align-items: center;
     justify-content: center;
     margin-left: auto;
@@ -565,7 +565,7 @@ export const Score =styled.span`
     font-family: "Rubik Medium", serif;
     font-size: 144px;
     line-height: 100%;
-    color: #313e51;
+    color: ${props => props.theme.colors.font};;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
@@ -579,7 +579,7 @@ export const Score =styled.span`
 
 export const SupportText = styled.span`
     display: block;
-    color: #626c7f;
+    color: ${props => props.theme.colors.subFont};
     font-family: "Rubik Regular", serif;
     font-size: 24px;
     margin-left: auto;

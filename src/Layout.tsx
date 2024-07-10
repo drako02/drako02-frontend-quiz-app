@@ -63,8 +63,7 @@ export const Subject = styled.div`
 export const SubjectText = styled.span`
     font-family: "Rubik Medium", serif;
     font-size: 28px;
-    color: #4d5869;
-
+    color: ${props => props.theme.colors.font};
     @media(max-width: ${breakpoints.mobile}){
         font-size: 18px;
     }
@@ -85,11 +84,14 @@ export const SubjectIcon = styled.img<{bgColor: string}>`
     }
 `;
 
+export interface LayoutProps {
+    toggleTheme: () => void;
+    isDarkMode: boolean;
+}
 
 
 
-
-const Layout = () => {
+const Layout = ({ toggleTheme, isDarkMode }: LayoutProps) => {
     // const[tile, setTitle] = useState("");
     const location = useLocation();
 
@@ -142,7 +144,7 @@ const Layout = () => {
                         <p> <SubjectText> {content.title} </SubjectText> </p>
                     </>
                 </Subject>
-               <Mode/>
+               <Mode toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
             </SubjectContainer>
             <Outlet/>
         </Container>

@@ -3,6 +3,7 @@ import light from './assets/images/icon-sun-dark.svg';
 import dark from './assets/images/icon-moon-dark.svg'
 
 import styled from "styled-components";
+import {LayoutProps} from "./Layout";
 
 const breakpoints = {tablet: '768px', mobile: '480px'};
 
@@ -59,7 +60,7 @@ const RoundSlider = styled.span`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #a729f5;
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 34px;
@@ -89,12 +90,12 @@ const RoundSlider = styled.span`
 `;
 
 
-function Mode() {
+function Mode({ toggleTheme, isDarkMode }:LayoutProps) {
     return(
         <ModeContainer>
             <Light src={light} ></Light>
             <Switch>
-                <SwitchInput type="checkbox" ></SwitchInput>
+                <SwitchInput type="checkbox" checked = {isDarkMode} onClick = {toggleTheme}></SwitchInput>
                 <RoundSlider></RoundSlider>
             </Switch>
             <Dark src={dark}></Dark>
