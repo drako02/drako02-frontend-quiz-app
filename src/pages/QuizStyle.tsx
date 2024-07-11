@@ -39,7 +39,14 @@ export const QuizContainer = styled.div`
         flex-direction: column;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-
+        position: absolute;
+        top: 23%;
+        left: 9.7% ;
+        //transform:translate(-50% , -50%);
+        width: 81%;
+        height: 72%;
+        display: flex;
+        justify-content: space-between;
     }
 
     @media(max-width: ${breakpoints.mobile}){
@@ -67,7 +74,12 @@ export const QuestionArea = styled.div`
         height: 30%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-
+        width: 42%;
+        height: 69%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;
@@ -89,7 +101,12 @@ export const QuestionContainer = styled.div`
         height: 70%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-
+        height: fit-content;
+        //margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        //margin-bottom: auto;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
@@ -123,7 +140,6 @@ export const QuestionNo = styled.span`
         font-family: "Rubik Regular", serif;
         font-size: 14px;
         font-style: italic;
-        margin-bottom: 9%;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
@@ -174,7 +190,8 @@ export const Tracker = styled.div`
         
     })
 @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-
+    height: 3.5%;
+    width: 100%;
 }
 @media(max-width: ${breakpoints.mobile}){
     width: 100%;
@@ -207,7 +224,9 @@ export const OptionsContainer = styled.div`
         height: 63%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-
+        flex-direction: column;
+        width: 49%;
+        gap: 4.5%;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;
@@ -229,7 +248,10 @@ export const Options = styled.div`
         height: 67%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-
+        width: 100%;
+        height: 69%;
+        margin: 0;
+        gap: 5%;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
@@ -296,6 +318,7 @@ export const OptionButton = styled.button<OptionButtonProps>`
         height: 20.4%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        height: 21%;
         font-family: "Rubik Medium", serif;
         font-size: 18px;
         border-radius: 12px;
@@ -464,7 +487,13 @@ export const ScoreArea = styled.div`
         flex-direction: column;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-
+        top: 23%;
+        left: 9.7% ;
+        width: 81%;
+        height: 59%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
@@ -500,6 +529,8 @@ export const ScoreText = styled.div`
         
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        width: 42%;
+        height: auto;
         font-family: "Rubik Light", serif;
         font-size: 40px;
         margin-top: 4%;
@@ -537,7 +568,8 @@ export const ScoreContainer = styled.div`
         height: 72%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-
+        width: 49%;
+        gap: 4.5%;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;
@@ -562,6 +594,8 @@ export const ScoreBox = styled.div`
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
         border-radius: 12px;
+        height: 75.7%;
+        width: auto;
     }
     @media(max-width: ${breakpoints.mobile}){
         border-radius: 12px;
@@ -593,6 +627,8 @@ export const PlayAgain = styled.button`
         font-family: "Rubik Medium", serif;
         font-size: 18px;
         border-radius: 12px;
+        height: 18%;
+        width: auto;
     }
     @media(max-width: ${breakpoints.mobile}){
         font-family: "Rubik Medium", serif;
@@ -633,6 +669,7 @@ export const Title = styled.div<{bgColor: string}>`
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
         font-family: "Rubik Medium", serif;
         font-size: 18px;
+        height: 14.5%;
 
     }
     @media(max-width: ${breakpoints.mobile}){

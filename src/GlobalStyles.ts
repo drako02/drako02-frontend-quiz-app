@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
         }
         
         @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
-            height: 140vh;
+            height: 120vh;
         }
         @media(max-width: ${breakpoints.mobile}){
             height: 100vh;
