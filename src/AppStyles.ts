@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const breakpoints = {tablet: '768px', mobile: '480px'};
+const breakpoints = {tablet: '1200px', mobile: '480px'};
 
 
 export const StartContainer = styled.div`
@@ -28,6 +28,9 @@ export const Menu = styled.div`
         flex-direction: column;
         justify-content: space-between;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
+
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
         height: 91%;
@@ -37,7 +40,6 @@ export const Menu = styled.div`
         justify-content: flex-start;
         align-items: center;
     }
-    
 `;
 
 export const Welcome = styled.div`
@@ -49,6 +51,8 @@ export const Welcome = styled.div`
     @media(max-width: ${breakpoints.tablet}){
         width: 73%;
         //height: 29%;
+    }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;
@@ -73,11 +77,18 @@ export const MainText = styled.span`
   white-space: nowrap;
   line-height: 100%;
 
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
+        -webkit-text-stroke: 0px transparent;
+        font-family: "Rubik Light", serif;
+        font-size: 40px;
+    }
+
     @media(max-width: ${breakpoints.mobile}){
         -webkit-text-stroke: 0px transparent;
         font-family: "Rubik Light", serif;
         font-size: 40px;
     }
+    
 `;
 
 export const SupText = styled.span`
@@ -89,6 +100,11 @@ export const SupText = styled.span`
   margin: 0;
   padding: 0;
   line-height: 100%;
+
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
+        font-family: "Rubik Medium", serif;
+        font-size: 40px;
+    }
 
     @media(max-width: ${breakpoints.mobile}){
         font-family: "Rubik Medium", serif;
@@ -108,6 +124,12 @@ export const SubText = styled.span`
     @media(max-width: ${breakpoints.tablet}){
         margin-top: 0;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
+        font-family: "Rubik Regular", serif;
+        font-size: 14px;
+        font-style: italic;
+        margin-top: 8%;
+    }
 
     @media(max-width: ${breakpoints.mobile}){
         font-family: "Rubik Regular", serif;
@@ -115,6 +137,7 @@ export const SubText = styled.span`
         font-style: italic;
         margin-top: 8%;
     }
+
 `;
 
 export const OptionsContainer = styled.div`
@@ -128,11 +151,16 @@ export const OptionsContainer = styled.div`
         width: 100%;
         height: 61.5%;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
+
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;
         height: 39%;
         margin-top: 4.3%;
     }
+
+    
 `;
 
 export const OptionButton = styled.button`
@@ -147,16 +175,23 @@ export const OptionButton = styled.button`
   height: 21%;
   border-width: 0;
   border-radius: 24px;
-  box-shadow: 0 16px 40px rgb(143, 160, 193, 0.15);
+  box-shadow: ${props => props.theme.colors.buttonShadow};
   display: flex;
   align-items: center;
 
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
+        height: 22%;
+        font-family: "Rubik Medium", serif;
+        font-size: 18px;
+        border-radius: 12px;
+    }
     @media(max-width: ${breakpoints.mobile}){
         height: 22%;
         font-family: "Rubik Medium", serif;
         font-size: 18px;
         border-radius: 12px;
     }
+
 `;
 
 export const ButtonIcon = styled.img<{bgColor: string}>`

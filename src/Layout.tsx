@@ -17,7 +17,7 @@ const Container = styled.div`
   position: absolute;
 `;
 
-const breakpoints = {tablet: '768px', mobile: '480px'};
+const breakpoints = {tablet: '1200px', mobile: '480px'};
 
 export const SubjectContainer = styled.div`
     position: absolute;
@@ -33,7 +33,12 @@ export const SubjectContainer = styled.div`
     @media(max-width: ${breakpoints.tablet}){
         top: 4%;
         left: 8.4%;
-        height: 6%;
+        height: 5.1%;
+        width: 83%;
+    }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
+        height: 5.1%;
+        width: 83%;
     }
     @media(max-width: ${breakpoints.mobile}){
         top: 0;
@@ -41,7 +46,6 @@ export const SubjectContainer = styled.div`
         width: 100%;
         height: 9%;
     }
-    
 `;
 export const Subject = styled.div`
     display: flex;
@@ -54,6 +58,8 @@ export const Subject = styled.div`
     @media(max-width: ${breakpoints.tablet}){
         width: 40%;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 45%;
         height: 56%;
@@ -64,9 +70,13 @@ export const SubjectText = styled.span`
     font-family: "Rubik Medium", serif;
     font-size: 28px;
     color: ${props => props.theme.colors.font};
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
+        font-size: 18px;
+    }
     @media(max-width: ${breakpoints.mobile}){
         font-size: 18px;
     }
+
 `;
 
 export const SubjectIcon = styled.img<{bgColor: string}>`
@@ -77,6 +87,8 @@ export const SubjectIcon = styled.img<{bgColor: string}>`
 
     @media(max-width: ${breakpoints.tablet}){
         width: 21%;
+    }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 24%;

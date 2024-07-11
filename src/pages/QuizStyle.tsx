@@ -12,7 +12,7 @@ import styled from "styled-components";
 //   display: flex;
 //   justify-content: space-between;
 // `;
-const breakpoints = {tablet: '768px', mobile: '480px'};
+const breakpoints = {tablet: '1200px', mobile: '480px'};
 
 
 interface OptionButtonProps {
@@ -38,6 +38,9 @@ export const QuizContainer = styled.div`
         left: 8%;
         flex-direction: column;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+
+    }
 
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
@@ -48,6 +51,7 @@ export const QuizContainer = styled.div`
         justify-content: flex-start;
         align-items: center;
     }
+
 `;
 
 export const QuestionArea = styled.div`
@@ -61,6 +65,9 @@ export const QuestionArea = styled.div`
     @media(max-width: ${breakpoints.tablet}){
         width: 100%;
         height: 30%;
+    }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;
@@ -81,10 +88,14 @@ export const QuestionContainer = styled.div`
         width: 100%;
         height: 70%;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
         height: 76%;
     }
+
 `;
 
 // export const QuestionParagraph = styled.p`
@@ -107,7 +118,13 @@ export const QuestionNo = styled.span`
   margin-top: 1%; 
   margin-bottom: 4%;
   line-height: 150%;
-
+    
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        font-family: "Rubik Regular", serif;
+        font-size: 14px;
+        font-style: italic;
+        margin-bottom: 9%;
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
         height: 9%;
@@ -122,7 +139,7 @@ export const Question = styled.span`
   width: 100%;
   margin: 0;
   padding: 0;
-    display: block;
+  display: block;
   font-family: "Rubik Medium", serif;
   font-size: 36px;
     line-height: 120%;
@@ -132,12 +149,16 @@ export const Question = styled.span`
         line-height: 100%;
 
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        font-family: "Rubik Medium", serif;
+        font-size: 20px;
+        line-height: 120%;
+    }
     @media(max-width: ${breakpoints.mobile}){
         font-family: "Rubik Medium", serif;
         font-size: 20px;
         line-height: 120%;
     }
-
 `;
 
 export const Tracker = styled.div`
@@ -152,10 +173,14 @@ export const Tracker = styled.div`
         height: 6.6%;
         
     })
+@media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+
+}
 @media(max-width: ${breakpoints.mobile}){
     width: 100%;
     height: 9.5%;
 }
+
 `;
 
 export const TrackerLevel = styled.div<{level: number}>`
@@ -168,6 +193,7 @@ export const TrackerLevel = styled.div<{level: number}>`
     top: 25%;
     left: 0.5%;
     border-radius: 100px;
+    transition: all ease 0.3s;
 `;
 
 export const OptionsContainer = styled.div`
@@ -180,11 +206,15 @@ export const OptionsContainer = styled.div`
         width: 100%;
         height: 63%;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;
         height: 55%;
         margin-top: 6.8%;
     }
+
 `;
 export const Options = styled.div`
   display: flex;
@@ -198,11 +228,14 @@ export const Options = styled.div`
         width: 100%;
         height: 67%;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
 
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
         height: 72%;
     }
+
 `;
 
 export const OptionButton = styled.button<OptionButtonProps>`
@@ -217,7 +250,7 @@ export const OptionButton = styled.button<OptionButtonProps>`
   height: 21%;
   border-width: 0;
   border-radius: 24px;
-  box-shadow: 0 16px 40px rgb(143, 160, 193, 0.15);
+  box-shadow: ${props => props.theme.colors.buttonShadow};
   display: flex;
   align-items: center;
   //transition: 0.2s ease;  
@@ -262,6 +295,11 @@ export const OptionButton = styled.button<OptionButtonProps>`
     @media(max-width: ${breakpoints.tablet}){
         height: 20.4%;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        font-family: "Rubik Medium", serif;
+        font-size: 18px;
+        border-radius: 12px;
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
         height: 22%;
@@ -274,8 +312,6 @@ export const OptionButton = styled.button<OptionButtonProps>`
             height: 50%;
         }
     }
-    
-
 `;
 
 export const OptionLetter = styled.div<OptionButtonProps>`
@@ -332,14 +368,18 @@ export const OptionLetter = styled.div<OptionButtonProps>`
             return "#a729f5";
         }};
 
+        @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+            border-radius: 6px;
+            font-family: "Rubik Medium", serif;
+            font-size: 18px;
+        }
         @media(max-width: ${breakpoints.mobile}){
             border-radius: 6px;
             width: 12%;
             height: 63%;
             font-family: "Rubik Medium", serif;
             font-size: 18px;
-        }
-        
+        }        
     }
     
 `;
@@ -364,6 +404,11 @@ export const SubmitButton = styled.button`
         cursor: pointer;
     }
 
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        font-family: "Rubik Medium", serif;
+        font-size: 18px;
+        border-radius: 12px;
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
         height: 14%;
@@ -371,6 +416,7 @@ export const SubmitButton = styled.button`
         font-size: 18px;
         border-radius: 12px;
     }
+
 `;
 
 export const Warning = styled.div`
@@ -389,10 +435,15 @@ export const Warning = styled.div`
     align-items: center;
     justify-content: center;
 
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        font-family: "Rubik Regular", serif;
+        font-size: 18px;
+    }
     @media(max-width: ${breakpoints.mobile}){
         font-family: "Rubik Regular", serif;
         font-size: 18px;
     }
+
     
 `;
 
@@ -412,6 +463,9 @@ export const ScoreArea = styled.div`
         left: 8.3%;
         flex-direction: column;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
         height: 91%;
@@ -421,6 +475,7 @@ export const ScoreArea = styled.div`
         justify-content: flex-start;
         align-items: center;
     }
+
 `;
 
 
@@ -444,6 +499,16 @@ export const ScoreText = styled.div`
         height: 19%;
         
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        font-family: "Rubik Light", serif;
+        font-size: 40px;
+        margin-top: 4%;
+
+        span{
+            font-family: "Rubik Medium", serif;
+            font-size: 40px;
+        }
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;
         height: 18%;
@@ -456,6 +521,7 @@ export const ScoreText = styled.div`
             font-size: 40px;
         }
     }
+
 
 `;
 
@@ -470,11 +536,15 @@ export const ScoreContainer = styled.div`
         width: 100%;
         height: 72%;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+
+    }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;
         height: 64%;
         margin-top: 3%;
     }
+
 `;
 
 export const ScoreBox = styled.div`
@@ -490,9 +560,13 @@ export const ScoreBox = styled.div`
         width: 100%;
         height: 75%;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        border-radius: 12px;
+    }
     @media(max-width: ${breakpoints.mobile}){
         border-radius: 12px;
     }
+
 `;
 
 export const PlayAgain = styled.button`
@@ -515,11 +589,17 @@ export const PlayAgain = styled.button`
         width: 100%;
         height: 18%;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        font-family: "Rubik Medium", serif;
+        font-size: 18px;
+        border-radius: 12px;
+    }
     @media(max-width: ${breakpoints.mobile}){
         font-family: "Rubik Medium", serif;
         font-size: 18px;
         border-radius: 12px;
     }
+
 `;
 
 export const Title = styled.div<{bgColor: string}>`
@@ -550,6 +630,11 @@ export const Title = styled.div<{bgColor: string}>`
     @media(max-width: ${breakpoints.tablet}){
     height: 14%;
     }
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        font-family: "Rubik Medium", serif;
+        font-size: 18px;
+
+    }
     @media(max-width: ${breakpoints.mobile}){
         height: 17%;
         width: 51%;
@@ -558,6 +643,7 @@ export const Title = styled.div<{bgColor: string}>`
         font-size: 18px;
 
     }
+
 `;
 
 export const Score =styled.span`
@@ -570,11 +656,16 @@ export const Score =styled.span`
     margin-right: auto;
     margin-top: 2%;
 
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        font-family: "Rubik Medium", serif;
+        font-size: 88px;
+    }
     @media(max-width: ${breakpoints.mobile}){
         font-family: "Rubik Medium", serif;
         font-size: 88px;
         margin-top: 7%;
     }
+
 `;
 
 export const SupportText = styled.span`
@@ -586,11 +677,17 @@ export const SupportText = styled.span`
     margin-right: auto;
     margin-bottom: 4%;
 
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
+        font-family: "Rubik Regular", serif;
+        font-size: 18px;
+        margin-bottom: 13%;
+
+    }
     @media(max-width: ${breakpoints.mobile}){
         font-family: "Rubik Regular", serif;
         font-size: 18px;
         margin-bottom: 13%;
 
     }
-
+                        
 `;

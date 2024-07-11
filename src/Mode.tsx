@@ -5,9 +5,7 @@ import dark from './assets/images/icon-moon-dark.svg'
 import styled from "styled-components";
 import {LayoutProps} from "./Layout";
 
-const breakpoints = {tablet: '768px', mobile: '480px'};
-
-
+const breakpoints = {tablet: '1200px', mobile: '480px'};
 
 const ModeContainer = styled.div`
     //position: absolute;
@@ -20,12 +18,16 @@ const ModeContainer = styled.div`
     flex-direction: row;
 
     @media(max-width: ${breakpoints.tablet}){
-        width: 24%;
+        width: 16%;
+        height: 50%;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 21%;
         height: 28%;
         margin-right: 6.4%;
+    }
+
+    @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
     }
 `;
 
