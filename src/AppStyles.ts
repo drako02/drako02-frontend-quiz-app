@@ -29,13 +29,7 @@ export const Menu = styled.div`
         justify-content: space-between;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
-        top: 23%;
-        left: 9.7% ;
-        //transform:translate(-50% , -50%);
-        width: 81%;
-        height: 54%;
-        display: flex;
-        flex-direction: row;
+
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
@@ -59,7 +53,6 @@ export const Welcome = styled.div`
         //height: 29%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
-        width: 42%;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;
@@ -159,8 +152,7 @@ export const OptionsContainer = styled.div`
         height: 61.5%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
-        width: 49%;
-        height: auto;
+
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;

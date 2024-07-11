@@ -18,14 +18,11 @@ const GlobalStyles = createGlobalStyle`
 
         @media(max-width: ${breakpoints.tablet}){
             height: 100vh;
-        }
-
-        @media(max-width: ${breakpoints.tablet}) and (orientation: landscape) {
-            height: 120vh;
-        }
-        
+        }@media(max-width: ${breakpoints.tablet}) and (orientation: landscape){
+        height: 120vh;
+    }
         @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
-            height: 120vh;
+            height: 180vh;
         }
         @media(max-width: ${breakpoints.mobile}){
             height: 100vh;

@@ -28,13 +28,6 @@ const ModeContainer = styled.div`
     }
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
-        display: flex;
-        width: 12.5%;
-        height: 63%;
-        //left: 81%;
-        //top: 10%;
-        border-style: none;
-        flex-direction: row;
     }
 `;
 

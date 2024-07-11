@@ -37,10 +37,8 @@ export const SubjectContainer = styled.div`
         width: 83%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
-        width: 80%;
-        height: 7%;
-        left: 9.7%;
-        top: 8.6%;
+        height: 5.1%;
+        width: 83%;
     }
     @media(max-width: ${breakpoints.mobile}){
         top: 0;
@@ -91,7 +89,6 @@ export const SubjectIcon = styled.img<{bgColor: string}>`
         width: 21%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
-        width: 16%;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 24%;
