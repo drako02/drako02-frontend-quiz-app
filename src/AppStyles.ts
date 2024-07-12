@@ -1,24 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-const breakpoints = {tablet: '1200px', mobile: '480px'};
-
+const breakpoints = { tablet: "1200px", mobile: "480px" };
 
 export const StartContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
+    width: 100%;
+    height: 100%;
+    position: absolute;
 `;
 
 export const Menu = styled.div`
-  position: absolute;
-  top: 23%;
-  left: 9.7% ;
-  //transform:translate(-50% , -50%);
-  width: 81%;
-  height: 54%;
-  display: flex;
-  justify-content: space-between;
+    position: absolute;
+    top: 23%;
+    left: 9.7% ;
+    //transform:translate(-50% , -50%);
+    width: 81%;
+    height: 54%;
+    display: flex;
+    justify-content: space-between;
 
     @media(max-width: ${breakpoints.tablet}){
         width: 83%;
@@ -43,11 +42,11 @@ export const Menu = styled.div`
 `;
 
 export const Welcome = styled.div`
-  width: 42%;
-  height: fit-content;
-  margin: 0;
-  padding: 0;
-    
+    width: 42%;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+
     @media(max-width: ${breakpoints.tablet}){
         width: 73%;
         //height: 29%;
@@ -62,20 +61,20 @@ export const Welcome = styled.div`
 `;
 
 export const WelcomeText = styled.p`
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 `;
 
 export const MainText = styled.span`
-  margin: 0;
-  padding: 0;
-  display: block;
-  font-family: "Rubik Regular", serif;
-  font-size: 64px;
-  color: ${props => props.theme.colors.font};
-  -webkit-text-stroke: 1px black;
-  white-space: nowrap;
-  line-height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-family: "Rubik Regular", serif;
+    font-size: 64px;
+    color: ${(props) => props.theme.colors.font};
+    -webkit-text-stroke: 1px black;
+    white-space: nowrap;
+    line-height: 100%;
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
         -webkit-text-stroke: 0px transparent;
@@ -88,18 +87,18 @@ export const MainText = styled.span`
         font-family: "Rubik Light", serif;
         font-size: 40px;
     }
-    
+
 `;
 
 export const SupText = styled.span`
-  display: block;
+    display: block;
     font-family: "Rubik Medium", serif;
     white-space: nowrap;
-  font-size: 64px;
-  color: ${props => props.theme.colors.font};;
-  margin: 0;
-  padding: 0;
-  line-height: 100%;
+    font-size: 64px;
+    color: ${(props) => props.theme.colors.font};;
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
         font-family: "Rubik Medium", serif;
@@ -113,13 +112,13 @@ export const SupText = styled.span`
 `;
 
 export const SubText = styled.span`
-  font-family: 'Rubik Regular', serif;
-  font-style: italic;
-  font-size: 16px;
-  color: ${props => props.theme.colors.subFont};
-  display: block;
-  margin-top: 8%;
-  line-height: 150%;
+    font-family: 'Rubik Regular', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: ${(props) => props.theme.colors.subFont};
+    display: block;
+    margin-top: 8%;
+    line-height: 150%;
 
     @media(max-width: ${breakpoints.tablet}){
         margin-top: 0;
@@ -141,11 +140,11 @@ export const SubText = styled.span`
 `;
 
 export const OptionsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 49%;
-  margin: 0;
-  gap: 4%;
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    margin: 0;
+    gap: 4%;
 
     @media(max-width: ${breakpoints.tablet}){
         width: 100%;
@@ -160,24 +159,24 @@ export const OptionsContainer = styled.div`
         margin-top: 4.3%;
     }
 
-    
+
 `;
 
 export const OptionButton = styled.button`
-  background-color: ${props => props.theme.colors.button};
-  font-family: "Rubik Medium", serif;
-  font-size: 28px;
-   text-decoration: none;
-  color: ${props => props.theme.colors.font};;
-  text-align: left;
-  flex: 1;
-  width: 100%;
-  height: 21%;
-  border-width: 0;
-  border-radius: 24px;
-  box-shadow: ${props => props.theme.colors.buttonShadow};
-  display: flex;
-  align-items: center;
+    background-color: ${(props) => props.theme.colors.button};
+    font-family: "Rubik Medium", serif;
+    font-size: 28px;
+    text-decoration: none;
+    color: ${(props) => props.theme.colors.font};;
+    text-align: left;
+    flex: 1;
+    width: 100%;
+    height: 21%;
+    border-width: 0;
+    border-radius: 24px;
+    box-shadow: ${(props) => props.theme.colors.buttonShadow};
+    display: flex;
+    align-items: center;
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
         height: 22%;
@@ -194,12 +193,11 @@ export const OptionButton = styled.button`
 
 `;
 
-export const ButtonIcon = styled.img<{bgColor: string}>`
-  background-color: ${props => props.bgColor};
-  height: 58%;
-  width: 10%;
-  border-radius: 8px;
-  margin-left: 4%;
-  margin-right: 8%;
+export const ButtonIcon = styled.img<{ bgColor: string }>`
+    background-color: ${(props) => props.bgColor};
+    height: 58%;
+    width: 10%;
+    border-radius: 8px;
+    margin-left: 4%;
+    margin-right: 8%;
 `;
-

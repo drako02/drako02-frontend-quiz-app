@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-
-
 // export const Menu = styled.div`
 //   position: absolute;
 //   top: 50%;
@@ -12,8 +10,7 @@ import styled from "styled-components";
 //   display: flex;
 //   justify-content: space-between;
 // `;
-const breakpoints = {tablet: '1200px', mobile: '480px'};
-
+const breakpoints = { tablet: "1200px", mobile: "480px" };
 
 interface OptionButtonProps {
     selected_option: string | null;
@@ -55,12 +52,12 @@ export const QuizContainer = styled.div`
 `;
 
 export const QuestionArea = styled.div`
-  width: 42%;
-  height: 69%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+    width: 42%;
+    height: 69%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     //justify-content: ;
     @media(max-width: ${breakpoints.tablet}){
         width: 100%;
@@ -109,16 +106,16 @@ export const QuestionContainer = styled.div`
 // `;
 
 export const QuestionNo = styled.span`
-  width: 100%;
-  font-family: 'Rubik Regular', serif;
-  font-style: italic;
-  font-size: 16px;
-  color: ${props => props.theme.colors.subFont};
-  display: block;
-  margin-top: 1%; 
-  margin-bottom: 4%;
-  line-height: 150%;
-    
+    width: 100%;
+    font-family: 'Rubik Regular', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: ${(props) => props.theme.colors.subFont};
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 4%;
+    line-height: 150%;
+
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
         font-family: "Rubik Regular", serif;
         font-size: 14px;
@@ -136,15 +133,15 @@ export const QuestionNo = styled.span`
 `;
 
 export const Question = styled.span`
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: block;
-  font-family: "Rubik Medium", serif;
-  font-size: 36px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-family: "Rubik Medium", serif;
+    font-size: 36px;
     line-height: 120%;
-  color: ${props => props.theme.colors.font};
-    
+    color: ${(props) => props.theme.colors.font};
+
     @media(max-width: ${breakpoints.tablet}){
         line-height: 100%;
 
@@ -165,29 +162,29 @@ export const Tracker = styled.div`
     height: 3.5%;
     width: 100%;
     //margin-top: auto;
-    background-color: ${props => props.theme.colors.tracker};
+    background-color: ${(props) => props.theme.colors.tracker};
     border-radius: 100px;
     margin-top: auto;
 
     @media(max-width: ${breakpoints.tablet}){
         height: 6.6%;
-        
+
     })
 @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
 
 }
-@media(max-width: ${breakpoints.mobile}){
-    width: 100%;
-    height: 9.5%;
-}
+    @media(max-width: ${breakpoints.mobile}){
+        width: 100%;
+        height: 9.5%;
+    }
 
 `;
 
-export const TrackerLevel = styled.div<{level: number}>`
+export const TrackerLevel = styled.div<{ level: number }>`
     position: relative;
     height: 50%;
-    width: ${({level}) => {
-        return `${9.9 * level }%`
+    width: ${({ level }) => {
+        return `${9.9 * level}%`;
     }};
     background-color: #a729f5;
     top: 25%;
@@ -217,12 +214,12 @@ export const OptionsContainer = styled.div`
 
 `;
 export const Options = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     height: 69%;
-  margin: 0;
-  gap: 5%;
+    margin: 0;
+    gap: 5%;
 
     @media(max-width: ${breakpoints.tablet}){
         width: 100%;
@@ -239,58 +236,61 @@ export const Options = styled.div`
 `;
 
 export const OptionButton = styled.button<OptionButtonProps>`
-  background-color: ${props => props.theme.colors.button};
-  font-family: "Rubik Medium", serif;
-  font-size: 28px;
-  color: ${props => props.theme.colors.font};
-    line-height: 90%; 
-  text-align: left;
-  flex: 1;
-  width: 100%;
-  height: 21%;
-  border-width: 0;
-  border-radius: 24px;
-  box-shadow: ${props => props.theme.colors.buttonShadow};
-  display: flex;
-  align-items: center;
-  //transition: 0.2s ease;  
+    background-color: ${(props) => props.theme.colors.button};
+    font-family: "Rubik Medium", serif;
+    font-size: 28px;
+    color: ${(props) => props.theme.colors.font};
+    line-height: 90%;
+    text-align: left;
+    flex: 1;
+    width: 100%;
+    height: 21%;
+    border-width: 0;
+    border-radius: 24px;
+    box-shadow: ${(props) => props.theme.colors.buttonShadow};
+    display: flex;
+    align-items: center;
+    //transition: 0.2s ease;  
     border: ${({ selected_option, _option, is_correct }) => {
         if (selected_option === _option) {
             if (is_correct === null) {
-                return "2.5px solid #a729f5" ;
+                return "2.5px solid #a729f5";
             } else {
                 return is_correct ? "3px solid #26d782" : "3px solid #ee5454;";
             }
         }
         return "";
-    }};  
-    
-  &:hover{
-      cursor: pointer;
-  }
-    &:active {
-        border: ${({ is_correct }) => (is_correct === null ? "2.5px solid #a729f5" : "")};
-    }
-    
-  
-  img {
-  ${({ selected_option, _option, is_correct }) => {
-      if (selected_option === _option) {
-      if (is_correct === null) {
-      return "display : none;" ;
-  } else {
-      return is_correct ? "height: 48%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;" 
-              :
-              "height: 48%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;";
-  }
-  }
-      if(selected_option !== _option){
-          if(is_correct!== null){return "height: 48%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;"}
-      }
-      return " display: none;";
-  }};
+    }};
 
-  }
+    &:hover{
+        cursor: pointer;
+    }
+    &:active {
+        border: ${({ is_correct }) =>
+                is_correct === null ? "2.5px solid #a729f5" : ""};
+    }
+
+
+    img {
+        ${({ selected_option, _option, is_correct }) => {
+            if (selected_option === _option) {
+                if (is_correct === null) {
+                    return "display : none;";
+                } else {
+                    return is_correct
+                            ? "height: 48%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;"
+                            : "height: 48%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;";
+                }
+            }
+            if (selected_option !== _option) {
+                if (is_correct !== null) {
+                    return "height: 48%; width: 7%; align-items: center; margin-left: auto; margin-right: 2.5;";
+                }
+            }
+            return " display: none;";
+        }};
+
+    }
 
     @media(max-width: ${breakpoints.tablet}){
         height: 20.4%;
@@ -307,7 +307,7 @@ export const OptionButton = styled.button<OptionButtonProps>`
         font-family: "Rubik Medium", serif;
         font-size: 18px;
         border-radius: 12px;
-        
+
         img{
             width: 9.8%;
             height: 50%;
@@ -345,14 +345,14 @@ export const OptionLetter = styled.div<OptionButtonProps>`
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease;
-    
+
     ${OptionButton}:hover &{
         background-color: ${({ selected_option, _option, is_correct }) => {
             if (selected_option === _option) {
                 if (is_correct === null) {
                     return "#a729f5";
                 } else {
-                    return is_correct ? "26d782"  : "ee5454";
+                    return is_correct ? "26d782" : "ee5454";
                 }
             }
             return "#f6e7ff";
@@ -363,7 +363,7 @@ export const OptionLetter = styled.div<OptionButtonProps>`
                 if (is_correct === null) {
                     return "white";
                 } else {
-                    return is_correct ? "white"  : "white";
+                    return is_correct ? "white" : "white";
                 }
             }
             return "#a729f5";
@@ -384,9 +384,9 @@ export const OptionLetter = styled.div<OptionButtonProps>`
             font-size: 18px;
             margin-left: 3.6%;
             margin-right: 5%;
-        }        
+        }
     }
-    
+
 `;
 
 export const SubmitButton = styled.button`
@@ -403,7 +403,7 @@ export const SubmitButton = styled.button`
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease;
-    
+
     &:hover{
         background-color: #d394fa;
         cursor: pointer;
@@ -425,7 +425,7 @@ export const SubmitButton = styled.button`
 `;
 
 export const Warning = styled.div`
-   img{
+    img{
         height: 100%;
         width: 10%;
     }
@@ -449,7 +449,7 @@ export const Warning = styled.div`
         font-size: 18px;
     }
 
-    
+
 `;
 
 export const ScoreArea = styled.div`
@@ -483,17 +483,16 @@ export const ScoreArea = styled.div`
 
 `;
 
-
 export const ScoreText = styled.div`
-  width: 42%;
-  margin: 0;
-  padding: 0;
-  font-family: "Rubik Regular", serif;
-  font-size: 64px;
-  line-height: 100%;
-  display: flex;
-  flex-direction: column;
-    color: ${props => props.theme.colors.font};
+    width: 42%;
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik Regular", serif;
+    font-size: 64px;
+    line-height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: ${(props) => props.theme.colors.font};
     span{
         font-family: "Rubik Medium", serif;
         font-size: 64px;
@@ -502,7 +501,7 @@ export const ScoreText = styled.div`
     @media(max-width: ${breakpoints.tablet}){
         width: 100%;
         height: 19%;
-        
+
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
         font-family: "Rubik Light", serif;
@@ -520,7 +519,7 @@ export const ScoreText = styled.div`
         font-family: "Rubik Light", serif;
         font-size: 40px;
         margin-top: 4%;
-        
+
         span{
             font-family: "Rubik Medium", serif;
             font-size: 40px;
@@ -554,7 +553,7 @@ export const ScoreContainer = styled.div`
 
 export const ScoreBox = styled.div`
     height: 75.7%;
-    background-color: ${props => props.theme.colors.button};
+    background-color: ${(props) => props.theme.colors.button};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -584,7 +583,7 @@ export const PlayAgain = styled.button`
     border-style: none;
     justify-content: center;
     border-radius: 24px;
-    
+
     &:hover{
         cursor: pointer;
         background-color: #d394fa;
@@ -607,15 +606,15 @@ export const PlayAgain = styled.button`
 
 `;
 
-export const Title = styled.div<{bgColor: string}>`
-    
+export const Title = styled.div<{ bgColor: string }>`
+
     height: 14.5%;
     width: 49%;
     display: flex;
     font-size: 28px;
     font-family: "Rubik Medium", serif;
     line-height: 100%;
-    color: ${props => props.theme.colors.font};
+    color: ${(props) => props.theme.colors.font};
     align-items: center;
     justify-content: center;
     margin-left: auto;
@@ -633,7 +632,7 @@ export const Title = styled.div<{bgColor: string}>`
     }
 
     @media(max-width: ${breakpoints.tablet}){
-    height: 14%;
+        height: 14%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
         font-family: "Rubik Medium", serif;
@@ -651,12 +650,12 @@ export const Title = styled.div<{bgColor: string}>`
 
 `;
 
-export const Score =styled.span`
+export const Score = styled.span`
     display: block;
     font-family: "Rubik Medium", serif;
     font-size: 144px;
     line-height: 100%;
-    color: ${props => props.theme.colors.font};;
+    color: ${(props) => props.theme.colors.font};;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
@@ -675,7 +674,7 @@ export const Score =styled.span`
 
 export const SupportText = styled.span`
     display: block;
-    color: ${props => props.theme.colors.subFont};
+    color: ${(props) => props.theme.colors.subFont};
     font-family: "Rubik Regular", serif;
     font-size: 24px;
     margin-left: auto;
@@ -694,5 +693,5 @@ export const SupportText = styled.span`
         margin-bottom: 13%;
 
     }
-                        
+
 `;
