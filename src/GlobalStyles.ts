@@ -24,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         height: 105vh;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Rubik Regular', Arial , sans-serif;
         background-color: ${(props) => props.theme.colors.background};
         background-size: cover;
         background-image: ${(props) => props.theme.img.background};

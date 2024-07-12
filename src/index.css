@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Rubik Regular';
+  font-weight: 400;
+  src: url("assets/font1/rubik_regular_webfont.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Rubik Light';
+  font-weight: 400;
+  src: url("assets/font1/rubik_light_webfont.woff2") format('woff2'), url("assets/font1/rubik_light_webfont.woff") format('woff')
+}
+
+@font-face {
+  font-family: 'Rubik Medium';
+  font-weight: 400;
+  src: url("assets/font1/rubik_medium_webfont.woff2") format('woff2'), url("assets/font1/rubik_medium_webfont.woff") format('woff')
+}
+
 body {
   position: relative;
   margin: 0;
