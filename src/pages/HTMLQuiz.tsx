@@ -1,5 +1,4 @@
-import React, {useEffect} from "react";
-import ReactDOM from "react-dom/client";
+import React from "react";
 import {useNavigate} from "react-router-dom";
 import quizData from '../data.json';
 import {useState} from "react";
@@ -44,10 +43,9 @@ function HTMLQuiz() {
     }
 
     const currentQuestion = htmlQuiz.questions[currentQuestionIndex];
-    // const correctOption = htmlQuiz.questions[currentQuestionIndex].answer;
 
     const handleOptionClick = (option: string) => {
-        if (isCorrect === null) { // Only allow option selection if the answer has not been submitted
+        if (isCorrect === null) {
             setSelectedOption(option);
             setShowWarning(false);
         }
@@ -91,7 +89,7 @@ function HTMLQuiz() {
                     </ScoreText>
                     <ScoreContainer>
                         <ScoreBox>
-                            <Title bgColor="#fff1e9"> <img src={iconHTML}/> {htmlQuiz.title}  </Title>
+                            <Title bgColor="#fff1e9"> <div> <img src={iconHTML}/> </div> {htmlQuiz.title}  </Title>
                             <Score>{score}</Score>
                             <SupportText>out of 10</SupportText>
                         </ScoreBox>

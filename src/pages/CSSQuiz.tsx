@@ -1,5 +1,4 @@
-import React, {useEffect} from "react";
-import ReactDOM from "react-dom/client";
+import React from "react";
 import {useNavigate} from "react-router-dom";
 import quizData from '../data.json';
 import {useState} from "react";
@@ -25,7 +24,6 @@ import {
     ScoreText,
     ScoreBox, PlayAgain, Title, Score, SupportText, QuestionArea
 } from "./QuizStyle";
-import Mode from "../Mode";
 
 
 
@@ -44,10 +42,9 @@ function CSSQuiz() {
     }
 
     const currentQuestion = cssQuiz.questions[currentQuestionIndex];
-    // const correctOption = cssQuiz.questions[currentQuestionIndex].answer;
 
     const handleOptionClick = (option: string) => {
-        if (isCorrect === null) { // Only allow option selection if the answer has not been submitted
+        if (isCorrect === null) {
             setSelectedOption(option);
             setShowWarning(false);
         }
@@ -91,7 +88,7 @@ function CSSQuiz() {
                 </ScoreText>
                 <ScoreContainer>
                     <ScoreBox>
-                        <Title bgColor="#e0fdef"> <img src={iconCSS}/> {cssQuiz.title}  </Title>
+                        <Title bgColor="#e0fdef"><div> <img src={iconCSS}/> </div>{cssQuiz.title}  </Title>
                         <Score>{score}</Score>
                         <SupportText>out of 10</SupportText>
                     </ScoreBox>

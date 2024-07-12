@@ -1,5 +1,3 @@
-import {ThemeProvider} from "styled-components";
-import {useState} from "react";
 import light1 from "./assets/images/pattern-background-desktop-light-top-left.svg";
 import light2 from "./assets/images/pattern-background-desktop-light_bottom-right.svg";
 import dark1 from "./assets/images/pattern-background-desktop-dark_top_left.svg";
@@ -24,7 +22,7 @@ export const LightMode = {
         subFont: '#626c7f',
         button: '#ffffff',
         tracker:'#ffffff',
-        buttonShadow: 'box-shadow: 0 16px 40px rgba(143, 160, 193, 0.14)'
+        buttonShadow: 'box-shadow: 0 16px 40px 0 rgba(143, 160, 193, 14%)'
     },
 
     img: {
@@ -43,7 +41,7 @@ export const LightMode = {
         subFont: '#abc1e1',
         button: '#3b4d66',
         tracker:'#3b4d66',
-        buttonShadow: 'box-shadow: 0 16px 40px rgba(49, 62, 81, 0.14)'
+        buttonShadow: 'box-shadow: 0 16px 40px 0 rgba(49, 62, 81, 14%)'
     },
 
      img: {

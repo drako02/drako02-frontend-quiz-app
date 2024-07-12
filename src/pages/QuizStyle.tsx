@@ -1,15 +1,6 @@
 import styled from "styled-components";
 
-// export const Menu = styled.div`
-//   position: absolute;
-//   top: 50%;
-//   left: 50% ;
-//   transform:translate(-50% , -50%);
-//   width: 81%;
-//   height: 60%;
-//   display: flex;
-//   justify-content: space-between;
-// `;
+
 const breakpoints = { tablet: "1200px", mobile: "480px" };
 
 interface OptionButtonProps {
@@ -67,6 +58,7 @@ export const QuestionArea = styled.div`
 
     }
     @media(max-width: ${breakpoints.mobile}){
+        margin-top: 4.3%;
         width: 87%;
         height: 29%;
         justify-content: space-between;
@@ -107,7 +99,7 @@ export const QuestionContainer = styled.div`
 
 export const QuestionNo = styled.span`
     width: 100%;
-    font-family: 'Rubik Regular', serif;
+    font-family: 'Rubik Regular', Arial, sans-serif;
     font-style: italic;
     font-size: 16px;
     color: ${(props) => props.theme.colors.subFont};
@@ -117,7 +109,7 @@ export const QuestionNo = styled.span`
     line-height: 150%;
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-        font-family: "Rubik Regular", serif;
+        font-family: "Rubik Regular", Arial, sans-serif;
         font-size: 14px;
         font-style: italic;
         margin-bottom: 9%;
@@ -125,7 +117,7 @@ export const QuestionNo = styled.span`
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
         height: 9%;
-        font-family: "Rubik Regular", serif;
+        font-family: "Rubik Regular", Arial, sans-serif;
         font-size: 14px;
         font-style: italic;
         margin-bottom: 9%;
@@ -137,7 +129,7 @@ export const Question = styled.span`
     margin: 0;
     padding: 0;
     display: block;
-    font-family: "Rubik Medium", serif;
+    font-family: "Rubik Medium", Arial, sans-serif;
     font-size: 36px;
     line-height: 120%;
     color: ${(props) => props.theme.colors.font};
@@ -147,12 +139,12 @@ export const Question = styled.span`
 
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 20px;
         line-height: 120%;
     }
     @media(max-width: ${breakpoints.mobile}){
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 20px;
         line-height: 120%;
     }
@@ -237,7 +229,7 @@ export const Options = styled.div`
 
 export const OptionButton = styled.button<OptionButtonProps>`
     background-color: ${(props) => props.theme.colors.button};
-    font-family: "Rubik Medium", serif;
+    font-family: "Rubik Medium", Arial, sans-serif;
     font-size: 28px;
     color: ${(props) => props.theme.colors.font};
     line-height: 90%;
@@ -255,7 +247,7 @@ export const OptionButton = styled.button<OptionButtonProps>`
     border: ${({ selected_option, _option, is_correct }) => {
         if (selected_option === _option) {
             if (is_correct === null) {
-                return "2.5px solid #a729f5";
+                return "3px solid #a729f5";
             } else {
                 return is_correct ? "3px solid #26d782" : "3px solid #ee5454;";
             }
@@ -268,7 +260,7 @@ export const OptionButton = styled.button<OptionButtonProps>`
     }
     &:active {
         border: ${({ is_correct }) =>
-                is_correct === null ? "2.5px solid #a729f5" : ""};
+                is_correct === null ? "3px solid #a729f5" : ""};
     }
 
 
@@ -297,7 +289,7 @@ export const OptionButton = styled.button<OptionButtonProps>`
         height: 20.4%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 18px;
         border-radius: 12px;
         padding-left: 1%;
@@ -305,7 +297,7 @@ export const OptionButton = styled.button<OptionButtonProps>`
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
         height: 22%;
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 18px;
         border-radius: 12px;
 
@@ -374,7 +366,7 @@ export const OptionLetter = styled.div<OptionButtonProps>`
 
         @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
             border-radius: 6px;
-            font-family: "Rubik Medium", serif;
+            font-family: "Rubik Medium", Arial, sans-serif;
             font-size: 18px;
             margin-left: 3.6%;
             margin-right: 5%;
@@ -383,7 +375,7 @@ export const OptionLetter = styled.div<OptionButtonProps>`
             border-radius: 6px;
             width: 12%;
             height: 63%;
-            font-family: "Rubik Medium", serif;
+            font-family: "Rubik Medium", Arial, sans-serif;
             font-size: 18px;
             margin-left: 3.6%;
             margin-right: 5%;
@@ -394,7 +386,7 @@ export const OptionLetter = styled.div<OptionButtonProps>`
 
 export const SubmitButton = styled.button`
     background-color: #a729f5;
-    font-family: "Rubik Medium", serif;
+    font-family: "Rubik Medium", Arial, sans-serif;
     font-size: 28px;
     color: #ffffff;
     //flex: 1;
@@ -413,14 +405,14 @@ export const SubmitButton = styled.button`
     }
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 18px;
         border-radius: 12px;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
         height: 14%;
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 18px;
         border-radius: 12px;
     }
@@ -436,7 +428,7 @@ export const Warning = styled.div`
     flex-direction: row;
     height: 6%;
     margin-top: auto;
-    font-family: "Rubik Regular", serif;
+    font-family: "Rubik Regular", Arial, sans-serif;
     font-size: 24px;
     line-height: 150%;
     color:#ee5454 ;
@@ -444,11 +436,11 @@ export const Warning = styled.div`
     justify-content: center;
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-        font-family: "Rubik Regular", serif;
+        font-family: "Rubik Regular", Arial, sans-serif;
         font-size: 18px;
     }
     @media(max-width: ${breakpoints.mobile}){
-        font-family: "Rubik Regular", serif;
+        font-family: "Rubik Regular", Arial, sans-serif;
         font-size: 18px;
     }
 
@@ -490,14 +482,14 @@ export const ScoreText = styled.div`
     width: 42%;
     margin: 0;
     padding: 0;
-    font-family: "Rubik Regular", serif;
+    font-family: "Rubik Regular", Arial, sans-serif;
     font-size: 64px;
     line-height: 100%;
     display: flex;
     flex-direction: column;
     color: ${(props) => props.theme.colors.font};
     span{
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 64px;
     }
 
@@ -507,24 +499,24 @@ export const ScoreText = styled.div`
 
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-        font-family: "Rubik Light", serif;
+        font-family: "Rubik Light", Arial, sans-serif;
         font-size: 40px;
         margin-top: 4%;
 
         span{
-            font-family: "Rubik Medium", serif;
+            font-family: "Rubik Medium", Arial, sans-serif;
             font-size: 40px;
         }
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 87%;
         height: 18%;
-        font-family: "Rubik Light", serif;
+        font-family: "Rubik Light", Arial, sans-serif;
         font-size: 40px;
         margin-top: 4%;
 
         span{
-            font-family: "Rubik Medium", serif;
+            font-family: "Rubik Medium", Arial, sans-serif;
             font-size: 40px;
         }
     }
@@ -578,7 +570,7 @@ export const ScoreBox = styled.div`
 
 export const PlayAgain = styled.button`
     height: 18%;
-    font-family: "Rubik Medium", serif;
+    font-family: "Rubik Medium", Arial, sans-serif;
     font-size: 28px;
     line-height: 100%;
     color: white;
@@ -597,12 +589,12 @@ export const PlayAgain = styled.button`
         height: 18%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 18px;
         border-radius: 12px;
     }
     @media(max-width: ${breakpoints.mobile}){
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 18px;
         border-radius: 12px;
     }
@@ -615,7 +607,7 @@ export const Title = styled.div<{ bgColor: string }>`
     width: 49%;
     display: flex;
     font-size: 28px;
-    font-family: "Rubik Medium", serif;
+    font-family: "Rubik Medium", Arial, sans-serif;
     line-height: 100%;
     color: ${(props) => props.theme.colors.font};
     align-items: center;
@@ -624,21 +616,29 @@ export const Title = styled.div<{ bgColor: string }>`
     margin-right: auto;
     margin-top: 7%;
     gap: 9.5%;
-    img{
+    div{
         height: 100%;
         width: 22%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: ${(props) => {
             return `${props.bgColor}`;
         }};
         border-radius: 8px;
-
+        
+        img{
+            height: 71%;
+            width: 71%;
+        }
     }
+    
 
     @media(max-width: ${breakpoints.tablet}){
         height: 14%;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 18px;
 
     }
@@ -646,7 +646,7 @@ export const Title = styled.div<{ bgColor: string }>`
         height: 17%;
         width: 51%;
         margin-top: 13%;
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 18px;
 
     }
@@ -655,7 +655,7 @@ export const Title = styled.div<{ bgColor: string }>`
 
 export const Score = styled.span`
     display: block;
-    font-family: "Rubik Medium", serif;
+    font-family: "Rubik Medium", Arial, sans-serif;
     font-size: 144px;
     line-height: 100%;
     color: ${(props) => props.theme.colors.font};;
@@ -664,11 +664,11 @@ export const Score = styled.span`
     margin-top: 2%;
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 88px;
     }
     @media(max-width: ${breakpoints.mobile}){
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 88px;
         margin-top: 7%;
     }
@@ -678,20 +678,20 @@ export const Score = styled.span`
 export const SupportText = styled.span`
     display: block;
     color: ${(props) => props.theme.colors.subFont};
-    font-family: "Rubik Regular", serif;
+    font-family: "Rubik Regular", Arial, sans-serif;
     font-size: 24px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4%;
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape) {
-        font-family: "Rubik Regular", serif;
+        font-family: "Rubik Regular", Arial, sans-serif;
         font-size: 18px;
         margin-bottom: 13%;
 
     }
     @media(max-width: ${breakpoints.mobile}){
-        font-family: "Rubik Regular", serif;
+        font-family: "Rubik Regular", Arial, sans-serif;
         font-size: 18px;
         margin-bottom: 13%;
 

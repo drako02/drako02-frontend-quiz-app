@@ -1,46 +1,125 @@
-# Getting Started with Create React App
+# Frontend Mentor - Frontend quiz app solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Frontend quiz app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/frontend-quiz-app-BE7xkzXQnU). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+- [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+- [Author](#author)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Overview
 
-### `npm test`
+### The challenge
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users should be able to:
 
-### `npm run build`
+- Select a quiz subject
+- Select a single answer from each question from a choice of four
+- See an error message when trying to submit an answer without making a selection
+- See if they have made a correct or incorrect choice when they submit an answer
+- Move on to the next question after seeing the question result
+- See a completed state with the score after the final question
+- Play again to choose another subject
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+- Navigate the entire app only using their keyboard
+- **Bonus**: Change the app's theme between light and dark
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Screenshot
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](./src/Screenshots/home_light.png)  
+![](./src/Screenshots/home_dark.png)
+![](./src/Screenshots/access_quiz_dark.png)
+![](./src/Screenshots/acc_quiz_wrog_light.png)
+![](./src/Screenshots/final_score_light.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Links
+- Live Site URL: [QuizApp](https://frontend-quiz-app-psi.vercel.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## My process
+I made use of gitflow throughout the process of creating this app. Making series of commits at each juncture till the project was completed.
+### Built with
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### What I learned
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I have learnt a lot about react, especially styled-components and how to use them with props. 
+I also learnt how use reacts router to navigate through different pages or screens
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```ts
+const OptionButton = styled.button<OptionButtonProps>`
+                                   background-color: ${(props) => props.theme.colors.button};
+font-family: "Rubik Medium", serif;
+font-size: 28px;
+color: ${(props) => props.theme.colors.font};
+line-height: 90%;
+text-align: left;
+flex: 1;
+width: 100%;
+height: 21%;
+border-width: 0;
+border-radius: 24px;
+box-shadow: ${(props) => props.theme.colors.buttonShadow};
+display: flex;
+align-items: center;
+justify-content: flex-start;
+border: ${({ selected_option, _option, is_correct }) => {
+    if (selected_option === _option) {
+        if (is_correct === null) {
+            return "3px solid #a729f5";
+        } else {
+            return is_correct ? "3px solid #26d782" : "3px solid #ee5454;";
+        }
+    }
+    return "";
+}};
+}`
+```
+```js
+<GlobalStyles/>
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Layout toggleTheme={toggleTheme} isDarkMode={isDarkMode} />}>
+      <Route index element={<Start/>}/>
+      <Route path="pages/HTMLQuiz" element={<HTMLQuiz/>}/>
+      <Route path="pages/CSSQuiz/" element={<CSSQuiz/>}/>
+      <Route path="pages/JavascriptQuiz" element={<JavaScriptQuiz/>}/>
+      <Route path="pages/AccessibilityQuiz" element={<AccessibilityQuiz/>}/>
+    </Route>
+  </Routes>
+</BrowserRouter>
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Continued development
+
+I would like to focus and keep working on how to use the different React hooks.
+
+### Useful resources
+
+- [W3Schools](https://www.w3schools.com/react/) - I used resources from W#Schools to ease into react as beginner. It was very insightful, and I'll recommend it to anyone who would like to start React.
+
+
+## Author
+
+- Website - [Andrew Appah](https://www.github.com/drako02)
+- Twitter - [@Dark_0ut] (www.twitter.com/Dark_0ut)
+

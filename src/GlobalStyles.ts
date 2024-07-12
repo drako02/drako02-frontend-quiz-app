@@ -1,15 +1,30 @@
 import { createGlobalStyle } from "styled-components";
-import light1 from "./assets/images/pattern-background-desktop-light-top-left.svg";
-import light2 from "./assets/images/pattern-background-desktop-light_bottom-right.svg";
-import dark1 from "./assets/images/pattern-background-desktop-dark_top_left.svg.svg";
-import dark2 from "./assets/images/pattern-background-desktop-dark_bottom_right.svg";
+
 
 const breakpoints = { tablet: "1200px", mobile: "480px" };
 
 const GlobalStyles = createGlobalStyle`
-    body{
+    @font-face {
+        font-family: 'Rubik Regular';
+        font-weight: 400;
+        src: url("assets/font1/rubik_regular_webfont.woff") format('woff');
+    }
+
+    @font-face {
+        font-family: 'Rubik Light';
+        font-weight: 400;
+        src: url("assets/font1/rubik_light_webfont.woff2") format('woff2'), url("assets/font1/rubik_light_webfont.woff") format('woff')
+    }
+
+    @font-face {
+        font-family: 'Rubik Medium';
+        font-weight: 400;
+        src: url("assets/font1/rubik_medium_webfont.woff2") format('woff2'), url("assets/font1/rubik_medium_webfont.woff") format('woff')
+    }
+
+    body {
         height: 105vh;
-        font-family: 'Rubik', serif;
+        font-family: 'Rubik', sans-serif;
         background-color: ${(props) => props.theme.colors.background};
         background-size: cover;
         background-image: ${(props) => props.theme.img.background};
@@ -17,26 +32,26 @@ const GlobalStyles = createGlobalStyle`
         background-position: left top, right bottom;
         transition: all 0.3s ease;
 
-        @media(max-width: ${breakpoints.tablet}){
+        @media (max-width: ${breakpoints.tablet}) {
             background-image: ${(props) => props.theme.img.backgroundTablet};
             background-position: 0% 0%;
             height: 100vh;
         }
-        @media(max-width: ${breakpoints.tablet}) and (orientation: landscape){
+        @media (max-width: ${breakpoints.tablet}) and (orientation: landscape) {
             height: 120vh;
         }
-        @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
+        @media (max-width: ${breakpoints.mobile}) and (orientation: landscape) {
             background-image: ${(props) => props.theme.img.backgroundMobile};
             height: 180vh;
             background-position: 0% 0%;
         }
-        @media(max-width: ${breakpoints.mobile}){
+        @media (max-width: ${breakpoints.mobile}) {
             background-image: ${(props) => props.theme.img.backgroundMobile};
             background-position: 0% 0%;
             height: 100vh;
         }
-        @media(max-height: 450px){
-            height: 180vh;
+        @media (max-height: 450px) {
+            height: 190vh;
         }
 
     }

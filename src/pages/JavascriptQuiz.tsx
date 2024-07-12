@@ -91,7 +91,7 @@ function JavaScriptQuiz() {
                 </ScoreText>
                 <ScoreContainer>
                     <ScoreBox>
-                        <Title bgColor="#ebf0ff"> <img src={iconJS}/> {javascriptQuiz.title}  </Title>
+                        <Title bgColor="#ebf0ff"> <div> <img src={iconJS}/> </div> {javascriptQuiz.title}  </Title>
                         <Score>{score}</Score>
                         <SupportText>out of 10</SupportText>
                     </ScoreBox>

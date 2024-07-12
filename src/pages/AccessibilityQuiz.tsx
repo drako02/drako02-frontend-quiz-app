@@ -91,7 +91,7 @@ function AccessibilityQuiz() {
                 </ScoreText>
                 <ScoreContainer>
                     <ScoreBox>
-                        <Title bgColor="#f6e7ff"> <img src={iconAccess}/> {accessibilityQuiz.title}  </Title>
+                        <Title bgColor="#f6e7ff"> <div> <img src={iconAccess}/> </div>{accessibilityQuiz.title}  </Title>
                         <Score>{score}</Score>
                         <SupportText>out of 10</SupportText>
                     </ScoreBox>

@@ -1,7 +1,5 @@
 import React from "react";
 import {Outlet, useLocation} from "react-router-dom";
-import {useState} from "react";
-import {   ButtonIcon} from './AppStyles';
 import Mode from "./Mode";
 import styled from "styled-components";
 import iconCSS from './assets/images/icon-css.svg';
@@ -67,7 +65,7 @@ export const Subject = styled.div`
     }
 `;
 export const SubjectText = styled.span`
-    font-family: "Rubik Medium", serif;
+    font-family: "Rubik Medium", Arial, sans-serif;
     font-size: 28px;
     color: ${props => props.theme.colors.font};
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
@@ -79,11 +77,20 @@ export const SubjectText = styled.span`
 
 `;
 
-export const SubjectIcon = styled.img<{bgColor: string}>`
+export const SubjectIcon = styled.div<{bgColor: string}>`
   background-color: ${props => props.bgColor};
   height: 100%;
   width: 16%;
   border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    img{
+        height: 71%;
+        width: 71%;
+    }
 
     @media(max-width: ${breakpoints.tablet}){
         width: 21%;
@@ -117,25 +124,25 @@ const Layout = ({ toggleTheme, isDarkMode }: LayoutProps) => {
             case "/pages/HTMLQuiz":
                 return {title: "HTML", imgSrc:iconHTML, color:"#fff1e9",
                     icon: function subIcon()  {return(
-                        <SubjectIcon src={content.imgSrc} bgColor={content.color} />
+                        <SubjectIcon  bgColor={content.color}> <img src={content.imgSrc}/> </SubjectIcon>
             )}
                 };
             case "/pages/CSSQuiz":
                 return {title: "CSS", imgSrc:iconCSS, color:"#e0fdef",
                     icon: function subIcon()  {return(
-                        <SubjectIcon src={content.imgSrc} bgColor={content.color} />
+                        <SubjectIcon  bgColor={content.color}> <img src={content.imgSrc}/> </SubjectIcon>
                     )}
                 };
             case "/pages/JavascriptQuiz":
                 return {title: "JavaScript", imgSrc:iconJS, color:"#ebf0ff",
                     icon: function subIcon()  {return(
-                        <SubjectIcon src={content.imgSrc} bgColor={content.color} />
+                        <SubjectIcon  bgColor={content.color}> <img src={content.imgSrc}/> </SubjectIcon>
                     )}
                 };
             case "/pages/AccessibilityQuiz":
                 return {title: "Accessibility", imgSrc:iconAccess, color:"#f6e7ff",
                     icon: function subIcon()  {return(
-                        <SubjectIcon src={content.imgSrc} bgColor={content.color} />
+                        <SubjectIcon  bgColor={content.color}> <img src={content.imgSrc}/> </SubjectIcon>
                     )}
                 };
             default:

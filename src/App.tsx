@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {BrowserRouter,Routes, Route, Link} from "react-router-dom";
+import {BrowserRouter,Routes, Route} from "react-router-dom";
 import Layout from "./Layout";
 import HTMLQuiz from "./pages/HTMLQuiz";
 import CSSQuiz from "./pages/CSSQuiz";

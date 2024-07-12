@@ -1,29 +1,23 @@
 import React from "react";
-import light from './assets/images/icon-sun-dark.svg';
-import dark from './assets/images/icon-moon-dark.svg'
-
 import styled from "styled-components";
 import {LayoutProps} from "./Layout";
 
 const breakpoints = {tablet: '1200px', mobile: '480px'};
 
 const ModeContainer = styled.div`
-    //position: absolute;
     display: flex;
-    width: 12.5%;
-    height: 63%;
-    //left: 81%;
-    //top: 10%;
+    width: 128px;
+    height: 28px;
     border-style: none;
     flex-direction: row;
 
     @media(max-width: ${breakpoints.tablet}){
-        width: 16%;
-        height: 50%;
+        width: 128px;
+        height: 28px;
     }
     @media(max-width: ${breakpoints.mobile}){
-        width: 21%;
-        height: 28%;
+        width: 80px;
+        height: 20px;
         margin-right: 6.4%;
     }
 
@@ -57,7 +51,7 @@ const SwitchInput = styled.input`
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 1;  // Ensure it can receive clicks and focus
+    z-index: 1;  
     cursor: pointer;
     
     
@@ -82,7 +76,7 @@ const RoundSlider = styled.span`
         height: 71.4%;
         width: 41.6%;
         left: 8%;
-        bottom: 15%;
+        bottom: 13%;
         background-color: white;
         -webkit-transition: .4s;
         transition: .4s;
@@ -99,7 +93,7 @@ const RoundSlider = styled.span`
         transform: translateX(93%);
     }
     
-    ${SwitchInput}:focus + &{
+    ${SwitchInput}:focus-visible + & {
             box-shadow: 0 0 5px 2px #a729f5;
             outline: none;
     }

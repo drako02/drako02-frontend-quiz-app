@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const breakpoints = { tablet: "1200px", mobile: "480px" };
@@ -69,7 +68,7 @@ export const MainText = styled.span`
     margin: 0;
     padding: 0;
     display: block;
-    font-family: "Rubik Regular", serif;
+    font-family: "Rubik Regular", Arial, sans-serif;
     font-size: 64px;
     color: ${(props) => props.theme.colors.font};
     -webkit-text-stroke: 1px black;
@@ -78,13 +77,13 @@ export const MainText = styled.span`
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
         -webkit-text-stroke: 0px transparent;
-        font-family: "Rubik Light", serif;
+        font-family: "Rubik Light", Arial, sans-serif;
         font-size: 40px;
     }
 
     @media(max-width: ${breakpoints.mobile}){
         -webkit-text-stroke: 0px transparent;
-        font-family: "Rubik Light", serif;
+        font-family: "Rubik Light", Arial, sans-serif;
         font-size: 40px;
     }
 
@@ -92,7 +91,7 @@ export const MainText = styled.span`
 
 export const SupText = styled.span`
     display: block;
-    font-family: "Rubik Medium", serif;
+    font-family: "Rubik Medium", Arial, sans-serif;
     white-space: nowrap;
     font-size: 64px;
     color: ${(props) => props.theme.colors.font};;
@@ -101,18 +100,18 @@ export const SupText = styled.span`
     line-height: 100%;
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 40px;
     }
 
     @media(max-width: ${breakpoints.mobile}){
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 40px;
     }
 `;
 
 export const SubText = styled.span`
-    font-family: 'Rubik Regular', serif;
+    font-family: 'Rubik Regular', Arial, sans-serif;
     font-style: italic;
     font-size: 16px;
     color: ${(props) => props.theme.colors.subFont};
@@ -124,14 +123,14 @@ export const SubText = styled.span`
         margin-top: 0;
     }
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
-        font-family: "Rubik Regular", serif;
+        font-family: "Rubik Regular", Arial, sans-serif;
         font-size: 14px;
         font-style: italic;
         margin-top: 8%;
     }
 
     @media(max-width: ${breakpoints.mobile}){
-        font-family: "Rubik Regular", serif;
+        font-family: "Rubik Regular", Arial, sans-serif;
         font-size: 14px;
         font-style: italic;
         margin-top: 8%;
@@ -164,7 +163,7 @@ export const OptionsContainer = styled.div`
 
 export const OptionButton = styled.button`
     background-color: ${(props) => props.theme.colors.button};
-    font-family: "Rubik Medium", serif;
+    font-family: "Rubik Medium", Arial, sans-serif;
     font-size: 28px;
     text-decoration: none;
     color: ${(props) => props.theme.colors.font};;
@@ -181,13 +180,13 @@ export const OptionButton = styled.button`
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
         height: 22%;
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 18px;
         border-radius: 12px;
     }
     @media(max-width: ${breakpoints.mobile}){
         height: 22%;
-        font-family: "Rubik Medium", serif;
+        font-family: "Rubik Medium", Arial, sans-serif;
         font-size: 18px;
         border-radius: 12px;
     }
