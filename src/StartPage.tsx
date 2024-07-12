@@ -30,10 +30,10 @@ function Start() {
                 <SubText> Pick a subject to get started </SubText>
             </Welcome>
             <OptionsContainer>
-                <OptionButton as={Link} to="./pages/HTMLQuiz"> <ButtonIcon src={iconHTML} bgColor="#fff1e9"/> HTML </OptionButton>
-                <OptionButton as={Link} to="./pages/CSSQuiz"> <ButtonIcon src={iconCSS} bgColor="#e0fdef"/> CSS </OptionButton>
-                <OptionButton as={Link} to="./pages/JavascriptQuiz"> <ButtonIcon src={iconJS} bgColor="#ebf0ff"/> Javascript </OptionButton>
-                <OptionButton as={Link} to="./pages/AccessibilityQuiz"> <ButtonIcon src={iconAccess} bgColor="#f6e7ff"/> Accessibility </OptionButton>
+                <OptionButton as={Link} to="./pages/HTMLQuiz"> <ButtonIcon  bgColor="#fff1e9"> <img src={iconHTML}/> </ButtonIcon> HTML </OptionButton>
+                <OptionButton as={Link} to="./pages/CSSQuiz"> <ButtonIcon bgColor="#e0fdef"> <img src={iconCSS} /> </ButtonIcon> CSS </OptionButton>
+                <OptionButton as={Link} to="./pages/JavascriptQuiz"> <ButtonIcon bgColor="#ebf0ff"> <img src={iconJS} /> </ButtonIcon> Javascript </OptionButton>
+                <OptionButton as={Link} to="./pages/AccessibilityQuiz"> <ButtonIcon bgColor="#f6e7ff"> <img src={iconAccess}/> </ButtonIcon> Accessibility </OptionButton>
             </OptionsContainer>
         </Menu>
     );

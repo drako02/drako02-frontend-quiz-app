@@ -52,8 +52,16 @@ const Switch = styled.label`
 
 const SwitchInput = styled.input`
     opacity: 0;
-    width: 0;
-    height: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;  // Ensure it can receive clicks and focus
+    cursor: pointer;
+    
+    
+
 `;
 
 const RoundSlider = styled.span`
@@ -90,15 +98,26 @@ const RoundSlider = styled.span`
         -ms-transform: translateX(93%);
         transform: translateX(93%);
     }
+    
+    ${SwitchInput}:focus + &{
+            box-shadow: 0 0 5px 2px #a729f5;
+            outline: none;
+    }
 `;
 
 
 function Mode({ toggleTheme, isDarkMode }:LayoutProps) {
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === ' ' || event.key === 'Enter') {
+            event.preventDefault();
+            toggleTheme();
+        }
+    }
     return(
         <ModeContainer>
             <Light ></Light>
             <Switch>
-                <SwitchInput type="checkbox" checked = {isDarkMode} onClick = {toggleTheme}></SwitchInput>
+                <SwitchInput type="checkbox" checked = {isDarkMode} onChange = {toggleTheme} tabIndex={0} onKeyDown = {handleKeyDown}></SwitchInput>
                 <RoundSlider></RoundSlider>
             </Switch>
             <Dark></Dark>

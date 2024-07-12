@@ -250,6 +250,7 @@ export const OptionButton = styled.button<OptionButtonProps>`
     box-shadow: ${(props) => props.theme.colors.buttonShadow};
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     //transition: 0.2s ease;  
     border: ${({ selected_option, _option, is_correct }) => {
         if (selected_option === _option) {
@@ -317,6 +318,8 @@ export const OptionButton = styled.button<OptionButtonProps>`
 
 export const OptionLetter = styled.div<OptionButtonProps>`
     display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
     background-color: ${({ selected_option, _option, is_correct }) => {
         if (selected_option === _option) {
             if (is_correct === null) {

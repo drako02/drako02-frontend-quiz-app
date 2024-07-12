@@ -8,6 +8,7 @@ const breakpoints = { tablet: "1200px", mobile: "480px" };
 
 const GlobalStyles = createGlobalStyle`
     body{
+        height: 105vh;
         font-family: 'Rubik', serif;
         background-color: ${(props) => props.theme.colors.background};
         background-size: cover;

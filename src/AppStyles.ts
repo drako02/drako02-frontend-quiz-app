@@ -177,6 +177,7 @@ export const OptionButton = styled.button`
     box-shadow: ${(props) => props.theme.colors.buttonShadow};
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 
     @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
         height: 22%;
@@ -193,11 +194,23 @@ export const OptionButton = styled.button`
 
 `;
 
-export const ButtonIcon = styled.img<{ bgColor: string }>`
-    background-color: ${(props) => props.bgColor};
+export const ButtonIcon = styled.div<{ bgColor: string }>`
+    display: flex;
     height: 58%;
     width: 10%;
     border-radius: 8px;
-    margin-left: 4%;
-    margin-right: 8%;
+    background-color: ${(props) => props.bgColor};
+    align-items: center;
+    justify-content: center;
+    margin-right: 5.7%;
+    margin-left: 3.5%;
+    
+    
+    img{
+        background-color: ${(props) => props.bgColor};
+        height: 71%;
+        width: 71%;
+        border-radius: 8px;
+
+    }
 `;
