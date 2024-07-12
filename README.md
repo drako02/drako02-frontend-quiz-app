@@ -54,7 +54,6 @@ I made use of gitflow throughout the process of creating this app. Making series
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
 
