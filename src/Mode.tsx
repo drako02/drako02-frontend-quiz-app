@@ -31,12 +31,13 @@ const ModeContainer = styled.div`
     }
 `;
 
-const Light = styled.img`
+const Light = styled.img.attrs(props =>({src: props.theme.img.lightIcon}))`
     padding: 0;
     margin-right: auto;
+    
 `;
 
-const Dark = styled.img`
+const Dark = styled.img.attrs(props =>({src: props.theme.img.darkIcon}))`
     padding: 0;
     margin-left: auto;
 `;
@@ -95,12 +96,12 @@ const RoundSlider = styled.span`
 function Mode({ toggleTheme, isDarkMode }:LayoutProps) {
     return(
         <ModeContainer>
-            <Light src={light} ></Light>
+            <Light ></Light>
             <Switch>
                 <SwitchInput type="checkbox" checked = {isDarkMode} onClick = {toggleTheme}></SwitchInput>
                 <RoundSlider></RoundSlider>
             </Switch>
-            <Dark src={dark}></Dark>
+            <Dark></Dark>
         </ModeContainer>
     );
 }

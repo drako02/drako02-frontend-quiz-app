@@ -242,7 +242,7 @@ export const OptionButton = styled.button<OptionButtonProps>`
   background-color: ${props => props.theme.colors.button};
   font-family: "Rubik Medium", serif;
   font-size: 28px;
-  color: ${props => props.theme.colors.font};;
+  color: ${props => props.theme.colors.font};
     line-height: 90%; 
   text-align: left;
   flex: 1;
@@ -299,6 +299,7 @@ export const OptionButton = styled.button<OptionButtonProps>`
         font-family: "Rubik Medium", serif;
         font-size: 18px;
         border-radius: 12px;
+        padding-left: 1%;
     }
     @media(max-width: ${breakpoints.mobile}){
         width: 100%;
@@ -360,7 +361,7 @@ export const OptionLetter = styled.div<OptionButtonProps>`
         color: ${({ selected_option, _option, is_correct }) => {
             if (selected_option === _option) {
                 if (is_correct === null) {
-                    return "whiite";
+                    return "white";
                 } else {
                     return is_correct ? "white"  : "white";
                 }
@@ -372,6 +373,8 @@ export const OptionLetter = styled.div<OptionButtonProps>`
             border-radius: 6px;
             font-family: "Rubik Medium", serif;
             font-size: 18px;
+            margin-left: 3.6%;
+            margin-right: 5%;
         }
         @media(max-width: ${breakpoints.mobile}){
             border-radius: 6px;
@@ -379,6 +382,8 @@ export const OptionLetter = styled.div<OptionButtonProps>`
             height: 63%;
             font-family: "Rubik Medium", serif;
             font-size: 18px;
+            margin-left: 3.6%;
+            margin-right: 5%;
         }        
     }
     

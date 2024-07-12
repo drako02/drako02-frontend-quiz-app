@@ -17,14 +17,21 @@ const GlobalStyles = createGlobalStyle`
         transition: all 0.3s ease;
 
         @media(max-width: ${breakpoints.tablet}){
+            background-image: ${props => props.theme.img.backgroundTablet};
+            background-position: 0% 0%;
             height: 100vh;
-        }@media(max-width: ${breakpoints.tablet}) and (orientation: landscape){
+        }
+        @media(max-width: ${breakpoints.tablet}) and (orientation: landscape){
         height: 120vh;
-    }
+        }
         @media(max-width: ${breakpoints.mobile}) and (orientation: landscape){
+            background-image: ${props => props.theme.img.backgroundMobile};
             height: 180vh;
+            background-position: 0% 0%;
         }
         @media(max-width: ${breakpoints.mobile}){
+            background-image: ${props => props.theme.img.backgroundMobile};
+            background-position: 0% 0%;
             height: 100vh;
         }
         
